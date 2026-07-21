@@ -41,23 +41,25 @@ class Home_model extends CI_Model {
     {
         $this->load->library('email');
     
+        $smtp_user = getenv('SMTP_USER') ?: 'gsteducationportal@gmail.com';
+
         $config = array(
             'protocol'  => 'smtp',
             'smtp_host' => 'smtp.gmail.com',
             'smtp_port' => 465,
-            'smtp_user' => 'gsteducationportal@gmail.com',
-            'smtp_pass' => 'hnrsanoizaqxomsv',
+            'smtp_user' => $smtp_user,
+            'smtp_pass' => getenv('SMTP_PASS') ?: '',
             'smtp_crypto' => 'ssl',
             'mailtype'  => 'html',
             'charset'   => 'utf-8',
             'newline'   => "\r\n",
             'crlf'      => "\r\n"
         );
-    
+
         $this->email->initialize($config);
-    
+
         // IMPORTANT: use same email as smtp_user
-        $this->email->from('gsteducationportal@gmail.com', 'GST');
+        $this->email->from($smtp_user, 'GST');
         $this->email->to($to);
         $this->email->subject($subject);
         $this->email->message($body);

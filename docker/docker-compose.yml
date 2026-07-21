@@ -22,6 +22,8 @@ services:
       DB_USER: ${DB_USER:-gstportal}
       DB_PASSWORD: ${DB_PASSWORD:-gstportal}
       APP_BASE_URL: ${APP_BASE_URL:-http://localhost:8090/}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASS: ${SMTP_PASS:-}
     depends_on:
       - mariadb
     networks:
