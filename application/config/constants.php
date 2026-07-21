@@ -83,16 +83,16 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
-define('SITE_NAME','ASC Journal'); 
+define('SITE_NAME','GST Simulation Lab');
 define('PREFIX','asc_');
 define('LFIX','_01');
-define('SITE_LOGO','uploads/logo.png');
-define('INFOID','info@/ascjournal.com');
-define('MAIL_LOGO','uploads/mail_logo.png');
+define('SITE_LOGO','assets/images/peslogo.png');
+define('INFOID','knowledge@practicaleduskills.com');
+define('MAIL_LOGO','assets/images/peslogo.png');
 define('ESTIMATED_DATE','l , d F');
 define('DISPLAY_DATE','d-m-Y');
 define('DISPLAY_DATE_TIME','d-m-Y h:i A');
-define('ADMIN_MAIL','info@/ascjournal.com');
+define('ADMIN_MAIL','knowledge@practicaleduskills.com');
 //define('ADMIN_MAIL','info@gmail.com');
 
 define('REGISTER_URL','sign-up');
@@ -125,7 +125,7 @@ define('ORDER_STATUS','order-status');
 define('MY_ORDER','my-order');
 define('SIGN_ICON','RS ');
 define('RAZOR_RETURN_URL','cart/payment-return');
-define('WELCOME_MESSAGE',SITE_NAME.'  is one of the leading e-commerce in India . ');
+define('WELCOME_MESSAGE',SITE_NAME.' by Practical EduSkills.');
 define('SWITCHTOBUYER','switch_to_buyer');
 define('ABOUT_US','about');
 define('CONTACT_US','contact');

@@ -10,7 +10,7 @@
                     <div class="col-xs-12">
                         <p>© 2025 </p>
                         <p>Site Last Updated on 03/04/2025</p>
-                        <!-- <p>Designed & Developed by <a href="https://www.teachoo.com">Teachoo</a></p> -->
+                        <p>Powered by <a href="https://practicaleduskills.com" target="_blank">Practical EduSkills</a></p>
                     </div>
                 </div>
             </div>

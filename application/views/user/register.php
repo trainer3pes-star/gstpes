@@ -11,7 +11,7 @@
             </button>
             <!-- Center-aligned logo -->
             <a class="navbar-brand" href="/">
-                <!-- <img alt="Brand" src="<?php echo base_url();?>assets/images/logo.png" class="img-responsive center-block" width="200" height="74"> -->
+                <img alt="Practical EduSkills" src="<?php echo base_url();?>assets/images/peslogo.png" style="height:40px;">
             </a>
             
         </div>
