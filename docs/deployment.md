@@ -13,7 +13,7 @@ ssh deploy@200.97.164.252
 
 # 1. Separate clone, separate directory from the LMS.
 sudo mkdir -p /opt/gstlab && sudo chown deploy:deploy /opt/gstlab
-git clone <this-repo-url> /opt/gstlab
+git clone https://github.com/trainer3pes-star/gstpes.git /opt/gstlab
 cd /opt/gstlab
 
 # 2. Own .env — real DB credentials, never committed.
