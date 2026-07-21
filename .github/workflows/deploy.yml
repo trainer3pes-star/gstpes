@@ -1,0 +1,30 @@
+name: Deploy GST Education Portal to Hostinger VPS
+
+# Fires on every push to main and can also be triggered manually from the
+# Actions tab without a new commit. Deploys to /opt/gstlab on the same VPS
+# that hosts the LMS (/opt/peslms) — a separate directory, separate Docker
+# Compose project, separate database, and separate host port (8090 vs the
+# LMS's 8080), so this workflow never touches the LMS's containers or data.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: SSH into VPS and pull + restart
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          script: |
+            set -euo pipefail
+            cd /opt/gstlab
+            git pull origin main
+            cd docker
+            docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d

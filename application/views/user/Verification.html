@@ -1,0 +1,1275 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title> GST Dashboard - gst.gov.in - GST Demo</title>
+    <meta property="og:title" content="GST Dashboard - gst.gov.in - GST Demo">
+    <meta property="og:description" name="description" content="For your help, we have made a GST Demo. It is a copy of the GST website which works same as original GST Website. You can practice your returns here" itemprop="description">
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/base_1.css">
+    
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Mobile menu toggle button -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- Center-aligned logo -->
+            <a class="navbar-brand" href="/">
+                <img alt="Brand" src="images/logo.png" class="img-responsive center-block" width="200" height="74">
+            </a>
+            
+        </div>
+
+        <!-- Navbar content -->
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li style="padding: 10px 5px;">
+                    <a href="/upgrade/#pricing" class="btn btn-success" style="padding: 8px 20px;
+                               border-radius: 4px;
+                               border:none;
+                               color:#fafafa;
+                               font-weight:600;
+                               background-color: #df153a;
+                               transition: background-color 0.3s ease, transform 0.2s ease;" onmouseover="this.style.backgroundColor='#a12d43'; this.style.transform='scale(1.10)'; this.style.borderBottom='none'" onmouseout="this.style.backgroundColor='#c43651'; this.style.transform='scale(1)'; this.style.borderBottom=''">
+                        🚀 Get Premium Access Now!</a>
+                </li>
+                
+                <li style="padding: 10px 5px;">                
+                    
+                    <a href="/user/login/">Login / Register</a>
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <nav class="bottom-navbar">
+    <div class="container-fluid red-box">
+        <p>This is a simulation. Please use this website for Educational purposes only. This is not affiliated with, endorsed by, or authorized by gst.gov.in or the Government of India</p>
+    </div>
+</nav>
+    <div class="gst-demo-navbar">
+    <header class="main-header">
+        <div class="skip">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul class="skip list-inline">
+                            <li><a tabindex="-1" class="accessible" href="">Skip to Main Content</a></li>
+                            <li class="high-low"><i class="fa fa-adjust"></i></li>
+                            <li class="fresize f-up">A<sup>+</sup></li>
+                            <li class="fresize f-down">A<sup>-</sup></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row branding">
+                <div class="col-xs-12">
+                    <a href="/gst/" title="Goods and Services Tax Home">                        
+                        <img class="gst-logo" src="images/emblem_of_India_white.svg" alt="Goods and Services Tax Home" style="vertical-align:middle; position:relative;margin-top:-10px;margin-left: 13px;width: 62px;height: 72px;">
+                    </a>
+                    <h1 class="site-title"><a href="/gst/">Goods and Services Tax<br><span class="subtitle">Government of India, States and Union Territories</span></a></h1>
+                    <ul class="list-inline mlinks">
+                        <li style="font-size:11px">
+                            <a target="_self" href="/gst/registration/" class="button"> Register</a>
+                        </li>
+                        <li>
+                            <a target="_self" href="/gst/login/" class="button"> Login</a>
+                        </li>
+                    </ul>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main" aria-expanded="false">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="sr-only">Toggle navigation</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!---->
+    <nav class="navbar navbar-default collapsed" style="top: auto;min-height: 0;">
+        <div class="container">
+            <div id="main" class="navbar-collapse collapse" aria-expanded="false">
+                <ul class="nav navbar-nav" link="" style="float:left">
+                    <li class="menuList active">
+                        
+                            <a target="_self" href="/gst/" class="nav_home" style="color: #fff;font-weight: 700;">Home</a>
+                        
+                        <a target="_self" href="/gst/dashboard/new/" class="ng-hide">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a style="color:#fff;font-weight:400;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" target="_self" href="">Services <span class="caret"></span></a>
+                        <ul class="dropdown-menu smenu" role="menu">
+                            <li class="has-sub">
+                                <a target="_self" href="" class="ng-hide">Registration</a>
+                                <a target="_self" href="">Registration</a>
+                                <ul class="isubmenu serv">
+                                    <li data-ng-hide="udata.utype=='TR' || udata.utype=='UN'  || udata.utype == 'O' || udata.utype == 'TPCAEX' || udata.utype == 'NREX'">
+                                        <a target="_self" href="">New Registration</a>
+                                    </li>
+                                    <li data-ng-hide="udata.utype=='TR'">
+                                        <a target="_self" href="">Application for Filing Clarifications</a>
+                                    </li>
+                                    <li class="ng-hide">
+                                        <a target="_self" href="">Amendment of Registration Core Fields</a>
+                                    </li>
+                                    <li class="">
+                                        <a target="_self" href="">Amendment of Registration Core Fields</a>
+                                    </li>
+                                    <li class="ng-hide">
+                                        <a target="_self" href="">Amendment of Registration Core Fields</a>
+                                    </li>
+                                    <li class="ng-hide">
+                                        <a target="_self" href="">Amendment of Registration Non - Core Fields</a>
+                                    </li>
+                                    <li class="">
+                                        <a target="_self" href="">Amendment of Registration Non - Core Fields</a>
+                                    </li>
+                                    <li class="ng-hide">
+                                        <a target="_self" href="">Amendment of Registration Non - Core Fields</a>
+                                    </li>
+                                    <li class="ng-hide">
+                                        <a target="_self" href="">Amendment of Registration Non - Core Fields</a>
+                                    </li>
+                                    <li class="ng-hide">
+                                        <a target="_self" href="">Amendment of Registration Non - Core Fields</a>
+                                    </li>
+                                    <li class="ng-hide">
+                                        <a target="_self" href="">Amendment of Registration Core Fields</a>
+                                    </li>
+                                    <li class="">
+                                        <a target="_self" href="">Application to Opt for composition Levy</a>
+                                    </li>
+                                    <li class="">
+                                        <a target="_self" href="">Application for Withdrawal from Composition Levy</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="" class="ng-hide">Track Application Status</a>
+                                        <a target="_self" href="" class="">Track Application Status</a>
+                                        <a target="_self" href="" class="ng-hide">Track Application Status</a>
+                                    </li>
+                                    <li class="ng-hide">
+                                        <a href="" target="_self">Stock intimation for opting Composition Levy</a>
+                                    </li>
+                                    <li class="ng-hide">
+                                        <a href="" target="_self">Application for Cancellation of Registration</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="" target="_self">Application for Cancellation of Registration</a>
+                                    </li>
+                                    <li class="ng-hide">
+                                        <a href="" target="_self">Application for Extension of Registration period by Casual/Non Resident Taxable Person</a>
+                                    </li>
+                                    <li class="ng-hide"><a target="_self" href="">Application for Revocation of Cancelled Registration</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="has-sub">
+                                <a target="_self" href="">Ledgers</a>
+                                <ul class="isubmenu leg post">
+                                    <li>
+                                        <a target="_self" href="/gst/ledger/cash-ledger/">Electronic Cash Ledger</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="/gst/ledger/credit-ledger/">Electronic Credit Ledger</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="/gst/ledger/liability-ledger/">Electronic Liability Ledger</a>
+                                    </li>
+                                    <li data-ng-hide="udata.utype == 'UN' || udata.utype == 'TC'">
+                                        <a target="_self" href="">Payment towards Demand</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="has-sub ng-hide">
+                                <a target="_self" href="">Ledgers</a>
+                                <ul class="isubmenu leg post">
+                                    <li>
+                                        <a target="_self" href="/gst/ledger/cash-ledger/">Electronic Cash Ledger</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-sub">
+                                <a target="_self" href="/gst/return/quicklinks/">Returns</a>
+                                <ul class="isubmenu ret post">
+                                    <li>
+                                        <a target="_self" href="/gst/return/dashboard/">Returns Dashboard</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="">View e-Filed Returns</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="">Track Return Status</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="">Transition Forms</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="">ITC Forms</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="/gst/return/annual/">Annual Return</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="">TDS and TCS credit received </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-sub">
+                                <a target="_self" href="" class="ng-hide">Payments</a>
+                                <a target="_self" href="" class="ng-hide">Payments</a>
+                                <a target="_self" href="">Payments</a>
+                                <ul class="isubmenu pay post">
+                                    <li>
+                                        <a target="_self" href="/gst/challan/create/" class="ng-hide">Create Challan</a>
+                                        <a target="_self" href="/gst/challan/history/" class="ng-hide">Challan History</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="/gst/challan/saved/">Saved Challans</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="/gst/challan/history/">Challan History</a>
+                                        <a target="_self" href="" class="ng-hide">Track Payment Status</a>
+                                    </li>
+                                    <li class="">
+                                        <a target="_self" href="">Application for Deferred Payment/Payment in Instalments</a>
+                                    </li>
+                                    <li class="">
+                                        <a target="_self" href="">Instalment Calendar</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-sub">
+                                <a target="_self" href="" class="ng-hide">User Services</a>
+                                <a target="_self" href="">User Services</a>
+                                <ul class="isubmenu oth">
+                                    <li class="">
+                                        <a target="_self" href="">My Saved Applications</a>
+                                    </li>
+                                    <li class="">
+                                        <a target="_self" href="">My Applications</a>
+                                    </li>
+                                    <li class="">
+                                        <a target="_self" href="">View/Download Certificates</a>
+                                    </li>
+                                    <li class="">
+                                        <a target="_self" href="">View Notices and Orders</a>
+                                    </li>
+                                    <li class="">
+                                        <a target="_self" href="">View My Submissions</a>
+                                    </li>
+                                    <li class="ng-hide">
+                                        <a target="_self" href="">Register / Update DSC</a>
+                                    </li>
+                                    <li class="">
+                                        <a target="_self" href="">Contacts</a>
+                                    </li>
+                                    <li ng-hide="udata && (udata.role == 'login' || udata.role == 'panLogin' || udata.utype=='UN' || udata.utype=='O')" class="ng-hide">
+                                        <a target="_self" href="">Contacts</a>
+                                    </li>
+                                    <li class="">
+                                        <a target="_self" href="">Holiday List</a>
+                                    </li>
+                                    <li ng-hide="udata && (udata.role == 'login' || udata.role == 'panLogin')" class="ng-hide">
+                                        <a target="_self" href="">Holiday List</a>
+                                    </li>
+                                    <li ng-hide="udata && (udata.role == 'login' || udata.role == 'panLogin')" class="ng-hide">
+                                        <a target="_self" href="">Search Office Addresses</a>
+                                    </li>
+                                    <li ng-show="udata && (udata.role == 'login' || udata.role == 'panLogin' || udata.utype=='UN' ||udata.utype=='O')" class="">
+                                        <a target="_self" href="">Feedback</a>
+                                    </li>
+                                    <li ng-show="udata && (udata.role == 'login' || udata.role == 'panLogin' || udata.utype=='UN' ||udata.utype=='O')" class="">
+                                        <a target="_self" href="">Grievance / Complaints</a>
+                                    </li>
+                                    <li data-ng-hide="udata && (udata.role == 'login' || udata.role == 'panLogin' || udata.utype== 'TPCAEX'|| udata.utype== 'NREX')" class="ng-hide">
+                                        <!-- <li data-ng-hide="udata.utype=='TR'">-->
+                                        <a target="_self" href="">Generate User Id for Advance Ruling</a>
+                                    </li>
+                                    <li class="">
+                                        <a target="_self" href="">Furnish Letter of Undertaking (LUT)</a>
+                                    </li>
+                                    <li class="">
+                                        <a target="_self" href="">View My Submitted LUTs</a>
+                                    </li>
+                                    <li ng-hide="udata && udata.role == 'login'" class="ng-hide">
+                                        <a target="_self" href="">Locate GST Practitioner (GSTP)</a>
+                                    </li>
+                                    <li ng-show="udata && (udata.role == 'login' ||udata.utype=='O')" class="">
+                                        <a target="_self" href="">Locate GST Practitioner (GSTP)</a>
+                                    </li>
+                                    <li ng-show="udata && (udata.role == 'login' || udata.role == 'panLogin') && (udata.utype== 'TP' || udata.utype=='NR'||udata.utype== 'TD'||udata.utype== 'TS'||udata.utype== 'O' || udata.utype== 'TPCAEX'||udata.utype== 'NREX') && udata.utype!='UN'" class="">
+                                        <a target="_self" href="">Engage / Disengage GST Practitioner (GSTP)</a>
+                                    </li>
+                                    <li class="">
+                                        <a target="_self" href="">ITC02-Pending for action</a>
+                                    </li>
+                                    <li class="">
+                                        <a target="_self" href="">View Additional Notices/Orders</a>
+                                    </li>
+                                    <li class="">
+                                        <a target="_self" href="">Cause List</a>
+                                    </li>
+                                    <li ng-hide="udata && (udata.role == 'login' || udata.role == 'panLogin')" class="ng-hide">
+                                        <a target="_self" href="">Cause List</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="has-sub" data-ng-show="udata && udata.role == 'login'">
+                                <a>Refunds</a>
+                                <ul class="isubmenu ref post" data-ng-class="{'ref': !udata,'ref post': udata && udata.role == 'login'}">
+                                    <li class="has-sub">
+                                        <a target="_self" href="">Application for Refund</a>
+                                    </li>
+                                    <li class="has-sub">
+                                        <a target="_self" href="">My Saved/Filed Applications</a>
+                                    </li>
+                                    <li class="has-sub">
+                                        <a target="_self" href="" class="">Track Application Status</a>
+                                        <a target="_self" href="" class="ng-hide">Track Application Status</a>
+                                    </li>
+                                    <li class="has-sub">
+                                        <a target="_self" href="">Track status of invoice data to be shared with ICEGATE</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a target="_self" style="color:#fff;font-weight:400;">GST Law</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" target="_self" href="" style="color:#fff;font-weight:400;">
+                                        Downloads <span class="caret"></span>
+                                        </a>
+                        <ul class="dropdown-menu smenu down pre" role="menu">
+                            <li class="has-sub">
+                                <a target="_self">Offline Tools</a>
+                                <ul class="isubmenu down">
+                                    <li>
+                                        <a target="_self" href="">Returns Offline Tool</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="">Tran-1 Offline Tools</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="">Tran-2 Offline Tools</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="">GSTR3B Offline Utility</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="">ITC01 Offline Tool</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="">ITC03 Offline Tool</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="">ITC04 Offline Tool</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="">GST ARA 01 - Application for Advance Ruling</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="">GSTR 4 Offline Tool</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="">GSTR 6 Offline Tool With Amendments</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="">GSTR 11 Offline Tool</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="">GSTR7 Offline Utility</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="">GSTR8 Offline Tool</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="">GSTR10 Offline Tool</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="">GSTR-9A Offline Tool</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="">GSTR-9C Offline Tool</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!---->
+                            <li class="has-sub">
+                                <a target="_self">Proposed Return documents</a>
+                                <ul class="isubmenu down" style="margin-left: -8.7em">
+                                    <li>
+                                        <a target="_self">New GST Return - Normal</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self">New GST Return - Sahaj</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self">New GST Return - Sugam</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown drpdwn">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" target="_self" href="" style="color:#fff;font-weight:400;">Search Taxpayer <span class="caret"></span></a>
+                        <ul class="dropdown-menu smenu searchtxp post ng-hide" role="menu">
+                            <li class="has-sub">
+                                <a target="_self" href="">Search by GSTIN/UIN</a>
+                            </li>
+                            <li class="has-sub">
+                                <a target="_self" href="">Search by PAN</a>
+                            </li>
+                            <li class="has-sub">
+                                <a target="_self" href="">Search Composition Taxpayer</a>
+                            </li>
+                        </ul>
+                        <ul class="dropdown-menu smenu searchtxp" role="menu" ng-hide="udata && udata.role == 'login'">
+                            <li class="has-sub">
+                                <a target="_self" href="">Search by GSTIN/UIN</a>
+                            </li>
+                            <li class="has-sub">
+                                <a target="_self" href="">Search by PAN</a>
+                            </li>
+                            <li class="has-sub">
+                                <a target="_self" href="">Search Composition Taxpayer</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown drpdwn">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" target="_self" href="" style="color:#fff;font-weight:400;">Help and Taxpayer Facilities <span class="caret"></span></a>
+                        <ul class="dropdown-menu smenu helpmenu" role="menu">
+                            <li class="has-sub">
+                                <a target="_blank" href="">System Requirements</a>
+                            </li>
+                            <li class="has-sub">
+                                <a target="_blank" href="">User Manuals, Videos and FAQs</a>
+                            </li>
+                            <li class="has-sub">
+                                <a target="_blank" href="">Documents Required for Registration</a>
+                            </li>
+                            <li class="has-sub">
+                                <a data-popup="true" target="_self" href="">GST Media</a>
+                            </li>
+                            <li class="has-sub ng-hide"><a target="_self" href="">Site Map</a></li>
+                            <li class="has-sub"><a target="_self" href="">Site Map</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a style="color:#fff;font-weight:400;" target="_self" href="/6667/2184/E-way-bill-process-in-UP-(Uttar-Pradesh)/category/E-way-bill-process/">e-Invoice </a>
+                    </li>
+                    <li class="mnav ng-hide"><a target="_self" href="">Login</a></li>
+                    <li class="mnav"><a target="_self" href="">MyProfile</a></li>
+                    <li class="mnav"><a target="_self" href="">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+    
+
+     
+    
+<div class="content-wrapper">
+        <div class="dimmer-holder" style="display: none;">
+            <div id="dimmer"></div>
+        </div>
+        <div class="container" style="font-size:14px;">
+            
+<div class="mypage">
+    <!-- <div class="form">
+        
+    </div> -->
+    <div class="row" data-ng-controller="transctrl" data-ng-init="init('registration')">
+        <div class="col-xs-10">
+            <div data-breadcrumb="" data-target="_self" name="Dashboard">
+                <ol class="breadcrumb" data-ng-controller="crumbCtrl">
+                    <li><a target="_self" href="/" data-ng-bind="name">Dashboard</a></li>
+                    <li data-ng-repeat="breadcrumb in breadcrumbs.getAll()"><ng-switch on="$last"> <span ng-switch-when="true">Business Details</span> </ng-switch></li>
+                </ol>
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <div class="lang dropdown">
+                <span class="dropdown-toggle" data-toggle="dropdown" data-ng-bind="selectedLang">English</span>
+                <ul class="dropdown-menu lang-dpdwn">
+
+                    <li data-ng-repeat="language in languages">
+                        <a data-ng-click="selectLang(language.cd)" data-ng-bind="language.nm">English</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="dimmer-holder" style="display: none;">
+        <div id="dimmer"></div>
+    </div>
+
+    <div ng-view="">
+        <div data-ng-include="'/pages/registration/newrg/regtabs.html'">
+            <!--<div data-ng-include="'/pages/registration/newrg/yellowtop.html'"></div>-->
+            <style>
+                .marqueeclr {
+                    background-color: #FCF1CA;
+                    color: #D80101;
+                    font-size: 12px;
+                }
+            </style>
+            <div class="marqueeclr">
+                <i class="fa fa-bell"></i>
+                <marquee width="95%" height="15px"><b><span data-ng-bind="trans.HLP_ADHR_MARQ1">Mobile number/e-mail id
+                            linked with Aadhaar can be verified at </span><a href="https://resident.uidai.gov.in/verify-email-mobile" target="_blank" rel="noopener noreferrer">https://resident.uidai.gov.in/verify-email-mobile</a> . <span data-ng-bind="trans.HLP_ADHR_MARQ2">Please wait 45 seconds before regenerating the OTP for
+                            Aadhaar authentication on GST portal.</span></b></marquee>
+            </div>
+            <div class="row regapp">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="col-sm-3 col-xs-12 headapptype">
+                        <p class="lbl" data-ng-bind="trans.LBL_APLTY">Application Type</p>
+
+                        <div data-ng-if="!clrPayload">
+
+                            <p class="apptype">New Registration</p>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-3 col-xs-12 appdue">
+                        <p class="lbl" data-ng-bind="trans.LBL_DUE_DATE">Due Date to Complete</p>
+
+                        <p class="date" data-ng-if="!clrPayload" data-ng-bind="rpayload.rgdtls.duedt">
+                            Feb. 7, 2026</p>
+
+
+                    </div>
+                    <div class="col-sm-3 col-xs-12 appmodify">
+                        <p class="lbl" data-ng-bind="trans.LBL_LAST_MODIFIED">Last Modified</p>
+
+                        <p class="date" data-ng-if="!clrPayload" data-ng-bind="rpayload.rgdtls.moddt">
+                            Jan. 23, 2026</p>
+
+
+                    </div>
+                    <div class="col-sm-3 col-xs-12 appperc">
+                        <p class="lbl" data-ng-bind="trans.LBL_PROFILE">Profile</p>
+                        <p class="date" data-ng-bind="pfilled+'%'">
+                            0%</p>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav nav-tabs responsive r1 reg-tabs" data-ng-class="{'adhr' : rpayload.bkacdtls}">
+                <li data-ng-class="statusClass(1)" class=" incomplete ">
+                    <a href="/gst/registration/step-1/"><span class="navicon business navicon fa fa-light fa-suitcase fa-2x" style="color:white;"></span>Business Details</a>
+                </li>
+                <li data-ng-class="statusClass(2)" class=" incomplete ">
+                    <a href="/gst/registration/step-2/"><span class="navicon partners navicon fa fa-user-tie fa-2x"></span>Promoter / Partners</a>
+                </li>
+                <li data-ng-class="statusClass(3)" class=" incomplete ">
+                    <a href="/gst/registration/step-3/"><span class="navicon auth-sig navicon fa fa-user-check fa-2x"></span>Authorized Signatory</a>
+                </li>
+                <li data-ng-class="statusClass(4)" class=" incomplete ">
+                    <a href="/gst/registration/step-4/"><span class="navicon auth-sig-rep navicon fa fa-user-cog fa-2x"></span>Authorized
+                        Representative</a>
+                </li>
+                <li data-ng-class="statusClass(5)" class=" incomplete ">
+                    <a href="/gst/registration/step-5/"><span class="navicon bplace navicon fa fa-map-marker-alt fa-2x"></span>Principal Place of Business</a>
+                </li>
+                <li data-ng-class="statusClass(6)" class=" incomplete ">
+                    <a href="/gst/registration/step-6/"><span class="navicon abplace navicon fa fa-map-marker-alt fa-2x"></span>Additional Places of
+                        Business</a>
+                </li>
+                <li data-ng-class="statusClass(7)" class=" incomplete ">
+                    <a href="/gst/registration/step-7/"><span class="navicon goods navicon fa fa-luggage-cart fa-2x"></span>Goods and Services</a>
+                </li>
+                <li href="/gst/registration/step-8/" "="" class=" incomplete ">
+                    <a><span class="navicon state navicon fa fa-id-card-alt fa-2x"></span>State Specific Information</a>
+                </li>
+                <li data-ng-class="statusClass(9)" class=" incomplete ">
+                    <a href="/gst/registration/step-9/"><span class="navicon fa fa-id-card fa-2x"></span>Aadhaar
+                        Authentication</a>
+                </li>
+                <li data-ng-class="statusClass(10)" class="active  incomplete ">
+                    <a><span class="navicon declaration fa fa-check-circle fa-2x"></span>Verification</a>
+                </li>
+            </ul>
+            <div id="adhrmdl" class="modal fade fade-scale" role="dialog" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog sweet">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="m-icon m-warning pulseWarning">
+                                <span class="micon-body pulseWarningIns"></span>
+                                <span class="micon-dot pulseWarningIns"></span>
+                            </div>
+                            <h2 data-ng-bind="trans.LBL_INFORMATION">Information</h2>
+                            <p data-ng-bind="trans.LBL_ADHR_WRNG">A separate process of Aadhaar authentication has been
+                                implemented. You are requested to provide your Aadhaar through the link sent at your
+                                Mobile No. and e-mail (furnished with registration details) on submission of the
+                                registration application.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" title="OK" class="btn btn-primary" data-dismiss="modal"><span data-ng-bind="trans.LBL_OK">OK</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="adhrmdar" class="modal fade fade-scale" role="dialog" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog sweet">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="m-icon m-warning pulseWarning">
+                                <span class="micon-body pulseWarningIns"></span>
+                                <span class="micon-dot pulseWarningIns"></span>
+                            </div>
+                            <h2 data-ng-bind="trans.LBL_INFORMATION">Information</h2>
+                            <p data-ng-bind="trans.LBL_ADHR_NOT_REQ">Aadhaar Authentication not required.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" title="OK" class="btn btn-primary" data-dismiss="modal"><span data-ng-bind="trans.LBL_OK">OK</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="alert-box-custom"></div>
+        <form class="tabpane ng-pristine ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" name="newRegForm" id="newRegForm" data-ng-submit="verifyDetails()" data-accessible-form="" autocomplete="off" novalidate="">
+            <div name="staus_msg"></div>
+            <p class="mand-text" data-ng-bind="trans.HLP_MAND_FIELD">indicates mandatory fields</p>
+            <h4>
+                <i class="fa fa-thumbs-up"></i>
+                <span data-ng-bind="trans.HEAD_VERIFICATION">Verification</span>
+            </h4>
+            <div class="tbl-format">
+                <!---->
+                <fieldset data-ng-disabled="(['DFT','VAE'].indexOf(rpayload.rgdtls.aplst) &lt; 0 &amp;&amp; !clrPayload) ||
+                                                ( clrPayload &amp;&amp; ['CLR','DCL','VAE'].indexOf(clrPayload.rgdtls.aplst) &lt; 0)">
+                    <div class="row">
+                        <div class="inner">
+                            <div class="col-xs-12 radio-order" data-ng-class="{'has-error' : newRegForm.authveri.$invalid &amp;&amp; newRegForm.authveri.$dirty}">
+                                <input type="checkbox" class="chkbx ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="authveri" required="" name="authveri" data-ng-model="verify" data-radio-chkbx="" data-ng-checked="(verify=='Y')?true:false" data-ng-click="compVerify()">
+                                <!-- CR#18614 click func added -->
+                                <!--data-ng-checked="(verify=='Y')?true:false">-->
+                                <label for="authveri"><span data-ng-bind="trans.LBL_DEC_INF">I hereby solemnly affirm
+                                        and
+                                        declare that the information given herein above is true and correct to the best
+                                        of my
+                                        knowledge and belief and nothing has been concealed therefrom.</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="inner">
+                            <div class="col-xs-12 col-sm-6" data-ng-class="{'has-error': vfsubmit &amp;&amp; newRegForm.authsign.$invalid,
+                                                                               'has-success': vfsubmit &amp;&amp; newRegForm.authsign.$valid}">
+                                <label for="authsign" class="reg m-cir" data-ng-bind="trans.LBL_NM_AUT">Name of
+                                    Authorized
+                                    Signatory</label>
+                                <!-- <select class="form-control" id="authsign" name="authsign" data-ng-model="vf.asnm" required autofocus
+                                            data-ng-change="getDesignation(rpayload.asgdtls, vf.asnm,'dg')">
+                                        <option value="">Select</option>
+                                        <option data-ng-repeat="asg in rpayload.asgdtls" value=""
+                                                data-ng-bind="asg.fn  + ' ' + asg.mn  + ' ' + asg.ln  + '[' + asg.pan.num + ']' | uppercase"></option>
+                                    </select> -->
+                                <select class="form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" id="authsign" name="authsign" data-ng-model="vf.as" required="" autofocus="" ng-options="asg.fn + ' ' + asg.mn  + ' ' + asg.ln  + '[' + asg.pan.num + ']' for  asg in rpayload.asgdtls">
+                                    <option value="" selected="selected">Select</option>
+                                    <option label="" value="object:1411">   []
+                                    </option>
+                                </select>
+                                <!---->
+                            </div>
+                            <div class="col-xs-12 col-sm-6" data-ng-class="{'has-error': vfsubmit &amp;&amp; newRegForm.veriPlace.$invalid,
+                                                                               'has-success': vfsubmit &amp;&amp; newRegForm.veriPlace.$valid}">
+                                <label for="veriPlace" class="reg m-cir" data-ng-bind="trans.LBL_PLC">Place</label>
+                                <input id="veriPlace" name="veriPlace" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" type="text" placeholder="Enter Place" data-ng-model="vf.pl" maxlength="50" data-ng-pattern="^[a-zA-Z0-9 ]+$" required="">
+                                <!---->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="inner">
+                            <div class="col-xs-12 col-sm-6">
+                                <label for="desig" class="reg m-cir" data-ng-bind="trans.LBL_DESGN">Designation /
+                                    Status</label>
+                                <p data-ng-bind="(rpayload.asgdtls | ordinal : 'eid' : vf.as.eid)[0].dg"></p>
+                                <!-- <input id="desig" class="form-control" data-ng-bind="vf.asdes" data-ng-value="vf.asdes" disabled required>-->
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <label for="veriDate" class="reg m-cir" data-ng-bind="trans.LBL_DATE">Date</label>
+                                <p data-ng-bind="vf.dt || ''">27/01/2026</p>
+                                <!-- <div class="datepicker-icon">
+                                        <i class="fa fa-calendar"></i>
+                                        <input id="veriDate" name="veriDate" data-ng-model="vf.dt" class="form-control date-picker" disabled required>
+                                    </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="inner">
+                            <div class="col-sm-12 col-xs-12">
+                                <p><i class="fa fa-info-circle"></i> <span><a href="https://tutorial.gst.gov.in/userguide/loginanddsc/#t=Register___Update_DSC.htm">
+                                            Facing problem using DSC? Click here for help</a></span></p>
+                                <!---->
+                                <div class="alert alert-warning" data-ng-if="!(verify &amp;&amp; vf.pl &amp;&amp; pfilled==100 &amp;&amp; vf.as.pan.num)">
+
+                                    <span>Submit buttons will get enabled only after all mandatory fields are filled.
+                                        Please
+                                        check that you have filled all mandatory fields in the Form.</span>
+                                </div><!---->
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="row next-tab-nav">
+                    <div class="inner">
+                        <div class="col-xs-12 text-right">
+                            <a title="Back" href="auth/newappl/aadhar" class="btn btn-default" data-ng-bind="trans.LBL_BACK">Back</a>
+                            <!---->
+
+                            <!-- DSC Bypass
+                                    <button title="" data-ng-disabled="!(verify && vf.pl && pfilled==100 && vf.as.pan.num && newRegForm.$valid)"  class="btn btn-primary hidden-sm hidden-xs" type="button" data-ng-click="bypassDSC()" data-ng-if="(['DFT','VAE'].indexOf(rpayload.rgdtls.aplst) >= 0 && !clrPayload && isButton)">Submit</button> -->
+
+                            <!-- With DSC -->
+                            <!----><button id="submit-dsc" title="Submit with DSC" class="btn btn-primary hidden-sm hidden-xs" type="button" disabled="disabled">Submit with DSC</button><!---->
+
+                            <!---->
+                            <!-- 
+                                    <button title="" data-ng-if="['DFT','VAE'].indexOf(rpayload.rgdtls.aplst) >= 0" class="btn btn-primary" data-ng-disabled="true || rpayload.bzdtls.bzdtlsbz.cobz==='PUB' || rpayload.bzdtls.bzdtlsbz.cobz==='PVT' || rpayload.bzdtls.bzdtlsbz.cobz==='ULC' || rpayload.bzdtls.bzdtlsbz.cobz==='FCO' || rpayload.bzdtls.bzdtlsbz.cobz==='LLP' || rpayload.bzdtls.bzdtlsbz.cobz==='FLL' || rpayload.bzdtls.bzdtlsbz.cobz==='PSU' " data-ng-bind="trans.LBL_E_SIGN"></button>-->
+
+                            <fieldset data-ng-disabled="!(verify &amp;&amp; vf.pl &amp;&amp; pfilled==100 &amp;&amp; newRegForm.$valid) || rpayload.srn" class="sub-btn">
+
+                                <!-- <span data-ng-if="['DFT','VAE'].indexOf(rpayload.rgdtls.aplst) >= 0" data-call-back="callEsignBack(response,type)" data-attach-esign="" data-esign-submit="'/registration/auth/api/esign/submit'" data-otp-url="'/registration/auth/api/esign/otp'" data-aadhar-number="vf.as.uid.num" data-provider="esignProvider" data-form-type="APLRG" data-submit-ck="submitCk()" data-r-payload="" data-tran-id = "" data-hash-call-back="calculateHash()">
+                                        </span> -->
+
+                                <!----><span>
+                                    <button id="submit-evc" type="button" class="btn btn-primary" disabled="true">Submit with EVC</button>
+                                    <div id="otpPrompt" class="modal fade text-left" role="dialog">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">OTP Verification</h4>
+                                                </div>
+                                                <div class="modal-body"><label class="reg">Please enter
+                                                        OTP</label><input name="otp" id="otpinput" type="password" class="form-control upper-input ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" data-capitalize="" data-ng-model="otp" maxlength="6" autofocus=""><!----></div>
+                                                <div class="modal-footer"><button type="button" class="btn btn-default" data-ng-click="reset()">Close</button><button type="button" data-ng-click="submitEVC()" class="btn btn-primary">Validate
+                                                        OTP</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </span><!---->
+
+                                <!-- <span data-ng-if="clrPayload && ['CLR','DCL','VAE'].indexOf(clrPayload.rgdtls.aplst) >= 0" data-call-back="callEsignBack(response,type)" data-attach-esign=""data-esign-submit="'/registration/auth/api/esign/submit'" data-otp-url="'/registration/auth/api/esign/otp'" data-aadhar-number="vf.as.uid.num" data-provider="esignProvider" data-form-type="APLFC" data-submit-ck="submitCk()" data-r-payload="{'filingClarificationVO':,'newRegVO':}" data-tran-id = "" data-hash-call-back="calculateClrHash()">
+                                        </span> -->
+
+                                <!---->
+
+                            </fieldset>
+
+                            <!--<button title="" data-ng-if="['DFT','VAE'].indexOf(rpayload.rgdtls.aplst) >= 0" class="btn btn-primary" data-ng-disabled="rpayload.bzdtls.bzdtlsbz.cobz==='PUB' || rpayload.bzdtls.bzdtlsbz.cobz==='PVT' || rpayload.bzdtls.bzdtlsbz.cobz==='ULC' || rpayload.bzdtls.bzdtlsbz.cobz==='FCO' || rpayload.bzdtls.bzdtlsbz.cobz==='LLP' || rpayload.bzdtls.bzdtlsbz.cobz==='FLL' || rpayload.bzdtls.bzdtlsbz.cobz==='PSU' " data-ng-bind="trans.LBL_EVC"></button>-->
+                        </div>
+                    </div>
+                </div>
+                <div id="myQueryModal" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">×</button>
+                                <h4 class="modal-title">Information</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12">
+                                        <p>Kindly Enter values for all the mandatory fields in business details tab.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- CR#18614 code changes -->
+                <!---->
+                <div data-ng-include="'/pages/registration/compMsg.html'">
+                    <!-- CR#18614 If comp user exceeds the threshold limit error message shown to taxpayer -->
+                    <style>
+                        #compMsg {
+                            color: red;
+                        }
+                    </style>
+                    <div id="compMsg" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title "><i class="fa fa-info-circle"></i>&nbsp;Warning</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row" style="background-color: white;">
+                                        <div class="col-xs-12 col-sm-12">
+                                            <p data-ng-bind="ExceedResp.warngMsg"></p>
+                                            <div>
+                                                <u>Note:</u><br>
+                                                <p data-ng-bind="ExceedResp.NT_PT_1"></p>
+                                                <p data-ng-bind="ExceedResp.NT_PT_2"></p>
+                                                <p data-ng-bind="ExceedResp.NT_PT_3"></p>
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    To continue your registration as Normal Taxpayer, <span><a href="" data-dismiss="modal" data-ng-click="compDisable()">click
+                                                            here.</a></span> To make changes to your application, click
+                                                    'MODIFY'
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-ng-click="showBusTab()">Modify</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="specialJursdModal" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">×</button>
+                                <h4 class="modal-title">Information</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12">
+                                        <p>Please reselect the State jurisdiction in business details section.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!---->
+                <!---->
+
+            </div>
+        </form>
+        <div class="modal fade fade-scale" id="EvcModal" role="dialog" data-ng-show="ModalFlag">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title" id="EvcModalLabel">Enter One Time Password</h4></div>
+                    <p class="alert err  alert-danger ng-hide" id="alertMsg" data-ng-show="alertMsgOtp"></p>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-8 has-success" data-ng-class="{'has-error':reqFlag || notValidOtp,'has-success':!reqFlag || !notValidOtp}">
+                                <label class="reg" for="otp">Your OTP has been sent to your mobile no and email. Please enter your OTP here</label>
+                                <input name="otp" class="form-control ng-dirty ng-valid-parse ng-valid-required ng-touched ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" autocomplete="off" id="otp" data-ng-model="otp" required="">
+                                <span id="otp-verify-error" class="err ng-hide" data-ng-show="reqFlag || notValidOtp" data-ng-bind="trans.ERR_EVC_OTP">Please enter correct OTP which has been sent to your registered Email ID and Mobile number.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" data-ng-click="validateOtpGSTR3B()" style="margin-top: 0;" id="otp_verify" data-return="gst-reg">Verify</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <div id="gst-course-modal" class="modal fade" tabindex="-1" role="dialog">
+    
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">�</span></button>
+                    <!-- <h4 class="modal-title">Take our premium course to use GST DEMO Website</h4> -->
+                    <h4 class="modal-title">Please login to view GST Simulation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>To use our demo portal (simulation)... <a href="/user/login/">Login Now</a></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+        
+</div><!-- /.modal -->
+<div id="challan-delete-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <div class="m-icon m-warning pulseWarning"><span class="micon-body pulseWarningIns"></span><span class="micon-dot pulseWarningIns"></span></div>
+            <h2>Warning</h2>
+            <p>Are you sure you want to delete this challan?</p>
+        </div>
+        <div class="modal-footer"><a class="btn btn-default" data-dismiss="modal" ng-click="cancelcallback()">Cancel</a><a class="btn btn-primary btn-ok" ng-click="callback()" target="_blank">Proceed</a></div>
+    </div>
+</div>
+<footer class="">
+    <div class="expbtn">
+        <i class="fa fa-angle-up" title="Expand/Collapse Footer"></i>
+    </div>
+    <div class="ifooter " id="demo">
+        <!-- <div class="f1 menuList" data-ng-show="!expanded" id="siteDis" data-toggle="tooltip" data-placement="top"
+            data-ng-class="{'disabled' :udata.disableMenu}" data-original-title="" title="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 no-mobile">
+                        <a class="fhead" data-ng-href="" 
+                            data-ng-class="{'disabledanchor' :udata.disableMenu}"
+                            href="" >About GST</a>
+                        <ul>
+                            <li><a data-ng-href="" 
+                                    data-ng-class="{'disabledanchor' :udata.disableMenu}"
+                                    href="" >GST Council Structure</a></li>
+                            <li><a data-ng-href="" 
+                                    data-ng-class="{'disabledanchor' :udata.disableMenu}"
+                                    href="" >GST History</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 no-mobile">
+                        <a class="fhead" data-ng-href="" 
+                            data-ng-class="{'disabledanchor' :udata.disableMenu}"
+                            href="" >Website Policies</a>
+                        <ul>
+                            <li><a data-ng-href="" 
+                                    data-ng-class="{'disabledanchor' :udata.disableMenu}"
+                                    href="" >Website Policy</a></li>
+                            <li><a data-ng-href="" 
+                                    data-ng-class="{'disabledanchor' :udata.disableMenu}"
+                                    href="" >Terms and Conditions</a></li>
+                            <li><a data-ng-href="" 
+                                    data-ng-class="{'disabledanchor' :udata.disableMenu}"
+                                    href="" >Hyperlink Policy</a></li>
+                            <li><a data-ng-href="" 
+                                    data-ng-class="{'disabledanchor' :udata.disableMenu}"
+                                    href="" >Disclaimer</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 no-mobile">
+                        <a class="fhead" data-ng-href="" 
+                            data-ng-class="{'disabledanchor' :udata.disableMenu}"
+                            href="" >Related Sites</a>
+                        <ul>
+                            <li><a data-popup="true" data-ng-href="" 
+                                    data-ng-class="{'disabledanchor' :udata.disableMenu}"
+                                    href="" >Central
+                                    Board
+                                    of Indirect Taxes and Customs</a></li>
+                            <li><a data-ng-href="" 
+                                    data-ng-class="{'disabledanchor' :udata.disableMenu}"
+                                    href="" >State
+                                    Tax Websites</a></li>
+                            <li><a data-popup="true" data-ng-href="" 
+                                    data-ng-class="{'disabledanchor' :udata.disableMenu}"
+                                    href="" >National
+                                    Portal</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12 help no-mobile">
+                        <a class="fhead"
+                            data-ng-href="" 
+                            target="_self" data-ng-class="{'disabledanchor' :udata.disableMenu}"
+                            href="" >Help and
+                            Taxpayer
+                            Facilities</a>
+                        <ul>
+                            <li> <a data-ng-href=""  target="_self"
+                                    data-ng-class="{'disabledanchor' :udata.disableMenu}"
+                                    href="" >System
+                                    Requirements</a></li>
+                            <li> <a data-ng-href=""  target="_self"
+                                    data-ng-class="{'disabledanchor' :udata.disableMenu}"
+                                    href="" >GST Knowledge Portal</a></li>
+                            <li> <a data-popup="true" href="" 
+                                    target="_blank" data-ng-class="{'disabledanchor' :udata.disableMenu}">GST Media</a>
+                            </li>
+
+
+                            
+                            
+                            
+                            <li data-ng-if="!udata"><a data-ng-href="" 
+                                    target="_self" data-ng-class="{'disabledanchor' :udata.disableMenu}"
+                                    href="" >Site Map</a></li>
+                            <li><a data-ng-href=""  target="_self"
+                                    data-ng-class="{'disabledanchor' :udata.disableMenu}"
+                                    href="" >Grievance Nodal Officers
+                                </a>
+                            </li>
+                            <li><a data-popup="true" data-ng-href="" 
+                                    target="_blank" data-ng-class="{'disabledanchor' :udata.disableMenu}"
+                                    href="" >Free Accounting and Billing
+                                    Services</a></li>
+                            <li><a data-popup="true" data-ng-href=""  target="_blank"
+                                    data-ng-class="{'disabledanchor' :udata.disableMenu}"
+                                    href="" >GST Suvidha Providers</a></li>
+
+                        </ul>
+
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 cont no-mobile scl">
+                        <a class="fhead" data-ng-href="" 
+                            data-ng-class="{'disabledanchor' :udata.disableMenu}"
+                            href="" >Contact Us</a>
+                        <ul>
+                            <li>
+                                <span class="contact">Help Desk Number: <br>1800-103-4786</span>
+                            </li>
+                            <li>
+                                <span class="contact">Log/Track Your Issue:<br></span><a data-popup="true" href=""
+                                    
+                                    title="Grievance Redressal Portal for GST" target="_blank"
+                                    data-ng-class="{'disabledanchor' :udata.disableMenu}">Grievance Redressal
+                                    Portal for GST</a>
+                            </li>
+                            <li class="social">
+                                <a data-popup="true" href="" 
+                                    title="Facebook" data-ng-class="{'disabledanchor' :udata.disableMenu}"><i
+                                        class="fa fa-facebook-square"></i>.</a>
+                                <a data-popup="true" href="" 
+                                    title="Youtube" data-ng-class="{'disabledanchor' :udata.disableMenu}"><i
+                                        class="fa fa-youtube-play"></i>.</a>
+                                <a data-popup="true" href="" 
+                                    data-ng-class="{'disabledanchor' :udata.disableMenu}"><i class="fa fa-twitter"
+                                        title="Twitter"></i>.</a>
+                                <a data-popup="true" href="" 
+                                    title="Linkedin" data-ng-class="{'disabledanchor' :udata.disableMenu}"><i
+                                        class="fa fa-linkedin"></i>.</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="f2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p>© 2025 </p>
+                        <p>Site Last Updated on 29/03/2025</p>
+                        <!-- <p>Designed & Developed by <a href="https://www.teachoo.com">Teachoo</a></p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="f3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="site">Site best viewed at 1024 x 768 resolution in Internet Explorer 10+, Google
+                            Chrome 49+, Firefox 45+ and Safari 6+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .disabled {
+                cursor: not-allowed !important;
+                opacity: 0.6;
+            }
+        </style>
+    </div>
+</footer>
+    <style>
+    .footer-links {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    
+    .footer-links li {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 1.2em;
+    }
+    
+    .footer-links a {
+        text-decoration: none;
+    }
+    
+    .footer-links a:hover {
+        color: #c74718;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+    </style>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="/about-us/">About us</a></li>
+                    <li><a href="/upgrade/">Upgrade</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                    <li><a href="/terms-and-conditions/">Terms and Conditions</a></li>
+                    <li><a href="/privacy-policy/">Privacy Policy</a></li>
+                    <li><a href="/refund-policy/">Refund Policy</a></li>
+                    <li><a href="/faq/">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 text-center">
+                <h4>Brothers in Arms</h4>
+                <ul class="footer-links">
+                    <li><a href="https://www.teachoo.com">Teachoo</a></li>
+                    <li><a href="https://www.schoolistan.com/">Schoolistan</a></li>
+                    <li><a href="https://www.skillistan.com/">Skillistan</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>� 2025 Tax Demo Portal. All Rights Reserved.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="disclaimer-text"><small>This is a simulation. Please use this website for Educational purposes only. This is not affiliated with, endorsed by, or authorized by gst.gov.in or the Government of India</small></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+        var sc_project = 12875655;
+        var sc_invisible = 1;
+        var sc_security = "6dc86be0"; 
+        
+    </script>
+    <script type="text/javascript" src="js/counter.js" async=""></script>
+    <!-- <script type="text/javascript" src="https://delan5sxrj8jj.cloudfront.net/html/js/jquery-1.10.2.min.df6173bad698.js"></script> -->
+    <script type="text/javascript" src="js/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="js/base_1.js"></script>
+    
+<script tyoe="text/javascript">
+    $(document).ready(function () {
+        $("#radiotrn").click(function () {
+            $("#new-reg").hide();
+            $("#trn").show();
+        });
+
+        $("#radionew").click(function () {
+            $("#new-reg").show();
+            $("#trn").hide();
+        });
+    });
+
+    var statesAndDistricts = {
+        "35": ["Anantapur", "Chittoor", "East Godavari", "Guntur", "Krishna", "Kurnool", "Prakasam", "Srikakulam", "Visakhapatnam", "Vizianagaram", "West Godavari", "YSR Kadapa"],
+        "37": ["Anjaw", "Changlang", "East Kameng", "East Siang", "Kamle", "Kra Daadi", "Kurung Kumey", "Lepa Rada", "Lohit", "Longding", "Lower Dibang Valley", "Lower Siang", "Lower Subansiri", "Namsai", "Pakke Kessang", "Papum Pare", "Shi Yomi", "Siang", "Tawang", "Tirap", "Upper Dibang Valley", "Upper Siang", "Upper Subansiri", "West Kameng", "West Siang"],
+        "18" : ['Baksa', 'Barpeta', 'Biswanath', 'Bongaigaon', 'Cachar', 'Charaideo', 'Chirang', 'Darrang', 'Dhemaji', 'Dhubri', 'Dibrugarh', 'Goalpara', 'Golaghat', 'Hailakandi', 'Hojai', 'Jorhat', 'Kamrup Metropolitan', 'Kamrup', 'Karbi Anglong', 'Karimganj', 'Kokrajhar', 'Lakhimpur', 'Majuli', 'Morigaon', 'Nagaon', 'Nalbari', 'Dima Hasao', 'Sivasagar', 'Sonitpur', 'South Salmara-Mankachar', 'Tinsukia', 'Udalguri', 'West Karbi Anglong'] ,
+        "10" : ['Araria', 'Arwal', 'Aurangabad', 'Banka', 'Begusarai', 'Bhagalpur', 'Bhojpur', 'Buxar', 'Darbhanga', 'East Champaran (Motihari)', 'Gaya', 'Gopalganj', 'Jamui', 'Jehanabad', 'Kaimur (Bhabua)', 'Katihar', 'Khagaria', 'Kishanganj', 'Lakhisarai', 'Madhepura', 'Madhubani', 'Munger (Monghyr)', 'Muzaffarpur', 'Nalanda', 'Nawada', 'Patna', 'Purnia (Purnea)', 'Rohtas', 'Saharsa', 'Samastipur', 'Saran', 'Sheikhpura', 'Sheohar', 'Sitamarhi', 'Siwan', 'Supaul', 'Vaishali', 'West Champaran'] ,
+        "04" : ['Chandigarh'] ,
+        "22" : ['Balod', 'Baloda Bazar', 'Balrampur', 'Bastar', 'Bemetara', 'Bijapur', 'Bilaspur', 'Dantewada (South Bastar)', 'Dhamtari', 'Durg', 'Gariyaband', 'Janjgir-Champa', 'Jashpur', 'Kabirdham (Kawardha)', 'Kanker (North Bastar)', 'Kondagaon', 'Korba', 'Korea (Koriya)', 'Mahasamund', 'Mungeli', 'Narayanpur', 'Raigarh', 'Raipur', 'Rajnandgaon', 'Sukma', 'Surajpur  ', 'Surguja'] ,
+        "26" : ['Dadra & Nagar Haveli'] ,
+        "07" : ['Central Delhi', 'East Delhi', 'New Delhi', 'North Delhi', 'North East  Delhi', 'North West  Delhi', 'Shahdara', 'South Delhi', 'South East Delhi', 'South West  Delhi', 'West Delhi'] ,
+        "30" : ['North Goa', 'South Goa'] ,
+        "24" : ['Ahmedabad', 'Amreli', 'Anand', 'Aravalli', 'Banaskantha (Palanpur)', 'Bharuch', 'Bhavnagar', 'Botad', 'Chhota Udepur', 'Dahod', 'Dangs (Ahwa)', 'Devbhoomi Dwarka', 'Gandhinagar', 'Gir Somnath', 'Jamnagar', 'Junagadh', 'Kachchh', 'Kheda (Nadiad)', 'Mahisagar', 'Mehsana', 'Morbi', 'Narmada (Rajpipla)', 'Navsari', 'Panchmahal (Godhra)', 'Patan', 'Porbandar', 'Rajkot', 'Sabarkantha (Himmatnagar)', 'Surat', 'Surendranagar', 'Tapi (Vyara)', 'Vadodara', 'Valsad'] ,
+        "06" : ['Ambala', 'Bhiwani', 'Charkhi Dadri', 'Faridabad', 'Fatehabad', 'Gurgaon', 'Hisar', 'Jhajjar', 'Jind', 'Kaithal', 'Karnal', 'Kurukshetra', 'Mahendragarh', 'Mewat', 'Palwal', 'Panchkula', 'Panipat', 'Rewari', 'Rohtak', 'Sirsa', 'Sonipat', 'Yamunanagar'] ,
+        "02" : ['Bilaspur', 'Chamba', 'Hamirpur', 'Kangra', 'Kinnaur', 'Kullu', 'Lahaul & Spiti', 'Mandi', 'Shimla', 'Sirmaur (Sirmour)', 'Solan', 'Una'] ,
+        "01" : ['Anantnag', 'Bandipore', 'Baramulla', 'Budgam', 'Doda', 'Ganderbal', 'Jammu', 'Kargil', 'Kathua', 'Kishtwar', 'Kulgam', 'Kupwara', 'Leh', 'Poonch', 'Pulwama', 'Rajouri', 'Ramban', 'Reasi', 'Samba', 'Shopian', 'Srinagar', 'Udhampur'] ,
+        "20" : ['Bokaro', 'Chatra', 'Deoghar', 'Dhanbad', 'Dumka', 'East Singhbhum', 'Garhwa', 'Giridih', 'Godda', 'Gumla', 'Hazaribag', 'Jamtara', 'Khunti', 'Koderma', 'Latehar', 'Lohardaga', 'Pakur', 'Palamu', 'Ramgarh', 'Ranchi', 'Sahibganj', 'Seraikela-Kharsawan', 'Simdega', 'West Singhbhum'] ,
+        "29" : ['Bagalkot', 'Ballari (Bellary)', 'Belagavi (Belgaum)', 'Bengaluru (Bangalore) Rural', 'Bengaluru (Bangalore) Urban', 'Bidar', 'Chamarajanagar', 'Chikballapur', 'Chikkamagaluru (Chikmagalur)', 'Chitradurga', 'Dakshina Kannada', 'Davangere', 'Dharwad', 'Gadag', 'Hassan', 'Haveri', 'Kalaburagi (Gulbarga)', 'Kodagu', 'Kolar', 'Koppal', 'Mandya', 'Mysuru (Mysore)', 'Raichur', 'Ramanagara', 'Shivamogga (Shimoga)', 'Tumakuru (Tumkur)', 'Udupi', 'Uttara Kannada (Karwar)', 'Vijayapura (Bijapur)', 'Yadgir'] ,
+        "32" : ['Alappuzha', 'Ernakulam', 'Idukki', 'Kannur', 'Kasaragod', 'Kollam', 'Kottayam', 'Kozhikode', 'Malappuram', 'Palakkad', 'Pathanamthitta', 'Thiruvananthapuram', 'Thrissur', 'Wayanad'] ,
+        "38" : ['Kargil', 'Leh Ladakh'],
+        "31" : ['Agatti', 'Amini', 'Androth', 'Bithra', 'Chethlath', 'Kavaratti', 'Kadmath', 'Kalpeni', 'Kilthan', 'Minicoy'] ,
+        "23" : ['Agar Malwa', 'Alirajpur', 'Anuppur', 'Ashoknagar', 'Balaghat', 'Barwani', 'Betul', 'Bhind', 'Bhopal', 'Burhanpur', 'Chhatarpur', 'Chhindwara', 'Damoh', 'Datia', 'Dewas', 'Dhar', 'Dindori', 'Guna', 'Gwalior', 'Harda', 'Hoshangabad', 'Indore', 'Jabalpur', 'Jhabua', 'Katni', 'Khandwa', 'Khargone', 'Mandla', 'Mandsaur', 'Morena', 'Narsinghpur', 'Neemuch', 'Panna', 'Raisen', 'Rajgarh', 'Ratlam', 'Rewa', 'Sagar', 'Satna', 'Sehore', 'Seoni', 'Shahdol', 'Shajapur', 'Sheopur', 'Shivpuri', 'Sidhi', 'Singrauli', 'Tikamgarh', 'Ujjain', 'Umaria', 'Vidisha'] ,
+        "27" : ['Ahmednagar', 'Akola', 'Amravati', 'Aurangabad', 'Beed', 'Bhandara', 'Buldhana', 'Chandrapur', 'Dhule', 'Gadchiroli', 'Gondia', 'Hingoli', 'Jalgaon', 'Jalna', 'Kolhapur', 'Latur', 'Mumbai City', 'Mumbai Suburban', 'Nagpur', 'Nanded', 'Nandurbar', 'Nashik', 'Osmanabad', 'Palghar', 'Parbhani', 'Pune', 'Raigad', 'Ratnagiri', 'Sangli', 'Satara', 'Sindhudurg', 'Solapur', 'Thane', 'Wardha', 'Washim', 'Yavatmal'] ,
+        "14" : ['Bishnupur', 'Chandel', 'Churachandpur', 'Imphal East', 'Imphal West', 'Jiribam', 'Kakching', 'Kamjong', 'Kangpokpi', 'Noney', 'Pherzawl', 'Senapati', 'Tamenglong', 'Tengnoupal', 'Thoubal', 'Ukhrul'] ,
+        "17" : ['East Garo Hills', 'East Jaintia Hills', 'East Khasi Hills', 'North Garo Hills', 'Ri Bhoi', 'South Garo Hills', 'South West Garo Hills ', 'South West Khasi Hills', 'West Garo Hills', 'West Jaintia Hills', 'West Khasi Hills'] ,
+        "15" : ['Aizawl', 'Champhai', 'Kolasib', 'Lawngtlai', 'Lunglei', 'Mamit', 'Saiha', 'Serchhip'] ,
+        "13" : ['Dimapur', 'Kiphire', 'Kohima', 'Longleng', 'Mokokchung', 'Mon', 'Peren', 'Phek', 'Tuensang', 'Wokha', 'Zunheboto'] ,
+        "21" : ['Angul', 'Balangir', 'Balasore', 'Bargarh', 'Bhadrak', 'Boudh', 'Cuttack', 'Deogarh', 'Dhenkanal', 'Gajapati', 'Ganjam', 'Jagatsinghapur', 'Jajpur', 'Jharsuguda', 'Kalahandi', 'Kandhamal', 'Kendrapara', 'Kendujhar (Keonjhar)', 'Khordha', 'Koraput', 'Malkangiri', 'Mayurbhanj', 'Nabarangpur', 'Nayagarh', 'Nuapada', 'Puri', 'Rayagada', 'Sambalpur', 'Sonepur', 'Sundargarh'] ,
+        "97" : [],        
+        "34" : ['Karaikal', 'Mahe', 'Pondicherry', 'Yanam'] ,
+        "03" : ['Amritsar', 'Barnala', 'Bathinda', 'Faridkot', 'Fatehgarh Sahib', 'Fazilka', 'Ferozepur', 'Gurdaspur', 'Hoshiarpur', 'Jalandhar', 'Kapurthala', 'Ludhiana', 'Mansa', 'Moga', 'Muktsar', 'Nawanshahr (Shahid Bhagat Singh Nagar)', 'Pathankot', 'Patiala', 'Rupnagar', 'Sahibzada Ajit Singh Nagar (Mohali)', 'Sangrur', 'Tarn Taran'] ,
+        "08" : ['Ajmer', 'Alwar', 'Banswara', 'Baran', 'Barmer', 'Bharatpur', 'Bhilwara', 'Bikaner', 'Bundi', 'Chittorgarh', 'Churu', 'Dausa', 'Dholpur', 'Dungarpur', 'Hanumangarh', 'Jaipur', 'Jaisalmer', 'Jalore', 'Jhalawar', 'Jhunjhunu', 'Jodhpur', 'Karauli', 'Kota', 'Nagaur', 'Pali', 'Pratapgarh', 'Rajsamand', 'Sawai Madhopur', 'Sikar', 'Sirohi', 'Sri Ganganagar', 'Tonk', 'Udaipur'] ,
+        "11" : ['East Sikkim', 'North Sikkim', 'South Sikkim', 'West Sikkim'] ,
+        "33" : ['Ariyalur', 'Chennai', 'Coimbatore', 'Cuddalore', 'Dharmapuri', 'Dindigul', 'Erode', 'Kanchipuram', 'Kanyakumari', 'Karur', 'Krishnagiri', 'Madurai', 'Nagapattinam', 'Namakkal', 'Nilgiris', 'Perambalur', 'Pudukkottai', 'Ramanathapuram', 'Salem', 'Sivaganga', 'Thanjavur', 'Theni', 'Thoothukudi (Tuticorin)', 'Tiruchirappalli', 'Tirunelveli', 'Tiruppur', 'Tiruvallur', 'Tiruvannamalai', 'Tiruvarur', 'Vellore', 'Viluppuram', 'Virudhunagar'] ,
+        "36" : ['Adilabad', 'Bhadradri Kothagudem', 'Hyderabad', 'Jagtial', 'Jangaon', 'Jayashankar Bhoopalpally', 'Jogulamba Gadwal', 'Kamareddy', 'Karimnagar', 'Khammam', 'Komaram Bheem Asifabad', 'Mahabubabad', 'Mahabubnagar', 'Mancherial', 'Medak', 'Medchal', 'Nagarkurnool', 'Nalgonda', 'Nirmal', 'Nizamabad', 'Peddapalli', 'Rajanna Sircilla', 'Rangareddy', 'Sangareddy', 'Siddipet', 'Suryapet', 'Vikarabad', 'Wanaparthy', 'Warangal (Rural)', 'Warangal (Urban)', 'Yadadri Bhuvanagiri'] ,
+        "16" : ['Dhalai', 'Gomati', 'Khowai', 'North Tripura', 'Sepahijala', 'South Tripura', 'Unakoti', 'West Tripura'] ,
+        "05" : ['Almora', 'Bageshwar', 'Chamoli', 'Champawat', 'Dehradun', 'Haridwar', 'Nainital', 'Pauri Garhwal', 'Pithoragarh', 'Rudraprayag', 'Tehri Garhwal', 'Udham Singh Nagar', 'Uttarkashi'] ,
+        "09" : ['Agra', 'Aligarh', 'Allahabad', 'Ambedkar Nagar', 'Amethi (Chatrapati Sahuji Mahraj Nagar)', 'Amroha (J.P. Nagar)', 'Auraiya', 'Azamgarh', 'Baghpat', 'Bahraich', 'Ballia', 'Balrampur', 'Banda', 'Barabanki', 'Bareilly', 'Basti', 'Bhadohi', 'Bijnor', 'Budaun', 'Bulandshahr', 'Chandauli', 'Chitrakoot', 'Deoria', 'Etah', 'Etawah', 'Faizabad', 'Farrukhabad', 'Fatehpur', 'Firozabad', 'Gautam Buddha Nagar', 'Ghaziabad', 'Ghazipur', 'Gonda', 'Gorakhpur', 'Hamirpur', 'Hapur (Panchsheel Nagar)', 'Hardoi', 'Hathras', 'Jalaun', 'Jaunpur', 'Jhansi', 'Kannauj', 'Kanpur Dehat', 'Kanpur Nagar', 'Kanshiram Nagar (Kasganj)', 'Kaushambi', 'Kushinagar (Padrauna)', 'Lakhimpur - Kheri', 'Lalitpur', 'Lucknow', 'Maharajganj', 'Mahoba', 'Mainpuri', 'Mathura', 'Mau', 'Meerut', 'Mirzapur', 'Moradabad', 'Muzaffarnagar', 'Pilibhit', 'Pratapgarh', 'RaeBareli', 'Rampur', 'Saharanpur', 'Sambhal (Bhim Nagar)', 'Sant Kabir Nagar', 'Shahjahanpur', 'Shamali (Prabuddh Nagar)', 'Shravasti', 'Siddharth Nagar', 'Sitapur', 'Sonbhadra', 'Sultanpur', 'Unnao', 'Varanasi'] ,
+        "19" : ['Alipurduar', 'Bankura', 'Birbhum', 'Burdwan (Bardhaman)', 'Cooch Behar', 'Dakshin Dinajpur (South Dinajpur)', 'Darjeeling', 'Hooghly', 'Howrah', 'Jalpaiguri', 'Kalimpong', 'Kolkata', 'Malda', 'Murshidabad', 'Nadia', 'North 24 Parganas', 'Paschim Medinipur (West Medinipur)', 'Purba Medinipur (East Medinipur)', 'Purulia', 'South 24 Parganas', 'Uttar Dinajpur (North Dinajpur)']
+    };
+
+    $('#id_state').change(function () {
+        var state = $(this).val();
+        var districts = statesAndDistricts[state];
+
+        $('#id_district').empty();
+        $('#id_district').append($('<option>', {value: "",text: "Select"}));
+
+        $.each(districts, function (index, district) {
+            $('#id_district').append($('<option>', {
+                value: district,
+                text: district
+            }));
+        });
+    });
+    $("#id_type_of_taxpayer").change(function () {
+        if ($(this).val() === "1") {
+            $("#panHelper").show();
+            $("#helpBlock").show();
+        } else {
+            $("#panHelper").hide();
+            $("#helpBlock").hide();
+        }
+    });
+    const panCardCodes = document.querySelectorAll('.pan-card-code');
+
+    document.querySelector('#id_pan').addEventListener('input', function() {
+    const inputLength = this.value.length;
+    for (let i = 0; i < inputLength; i++) {
+        panCardCodes[i].classList.add('success');
+    }
+    for (let i = inputLength; i < panCardCodes.length; i++) {
+        panCardCodes[i].classList.remove('success');
+    }
+    });
+
+</script>
+
+
+
+
+
+</body></html>

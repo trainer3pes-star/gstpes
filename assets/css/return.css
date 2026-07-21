@@ -1,0 +1,68 @@
+.offline_btn {
+padding-left: 15px;
+padding-right: 15px;
+}
+
+.mark {
+color: #14385D;
+}
+.khakhi{
+color: khaki;
+}
+
+.content-pane-returns {
+background-color: white;
+padding: 0px 15px 30px 15px;
+}
+.infoalign{
+
+margin-left: 1.2%;
+margin-right: 1%;
+}
+.retpad {
+padding-bottom: 195px;
+}
+
+.srchbtn {
+margin-top: 25px;
+}
+
+.srchbtn1 {
+margin-top: 65px;
+}
+
+.gtsave {
+width: 20%;
+}
+
+.disableTile {
+position: absolute;
+background: #eee;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+opacity: 0.5;
+z-index: 100;
+margin: 0 15px;
+cursor: pointer;
+}
+
+.whiteside {
+background-color: #FFFAF0;
+padding: 10px;
+color: black;
+}
+.card .hd {
+height:113px;
+}
+.smallbutton {
+padding: 5px 10px;
+font-size: 14px;
+line-height: 1.5;
+border-radius: 0px;
+}
+
+
+
+

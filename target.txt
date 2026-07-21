@@ -1,0 +1,22 @@
+01-05-21
+- edit profile for doctor , rmp , patient - in front  
+- list view doctor , rmp , patient --in admin
+
+
+- admin - add doctor , edit , delete , block nd unblock
+list of docto with filter
+detail view 
+book appointment 
+
+
+ALTER TABLE `vcod_users` ADD `is_show_on_site` TINYINT NOT NULL DEFAULT '0' AFTER `is_verify`;
+
+
+email package 
+
+domin 
+web site hot 
+
+
+name serever change
+

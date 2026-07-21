@@ -1,0 +1,48 @@
+services:
+  nginx:
+    image: nginx:1.27-alpine
+    depends_on:
+      - php
+    ports:
+      - "${HTTP_PORT:-8090}:80"
+    volumes:
+      - ..:/var/www/html:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - gstlab
+
+  php:
+    build:
+      context: ./php
+    volumes:
+      - ..:/var/www/html
+    environment:
+      DB_HOST: mariadb
+      DB_NAME: ${DB_NAME:-gstportal}
+      DB_USER: ${DB_USER:-gstportal}
+      DB_PASSWORD: ${DB_PASSWORD:-gstportal}
+      APP_BASE_URL: ${APP_BASE_URL:-http://localhost:8090/}
+    depends_on:
+      - mariadb
+    networks:
+      - gstlab
+
+  mariadb:
+    image: mariadb:11.4
+    environment:
+      MARIADB_DATABASE: ${DB_NAME:-gstportal}
+      MARIADB_USER: ${DB_USER:-gstportal}
+      MARIADB_PASSWORD: ${DB_PASSWORD:-gstportal}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-gstportal_root}
+    volumes:
+      - dbdata:/var/lib/mysql
+    ports:
+      - "${DB_PORT:-3307}:3306"
+    networks:
+      - gstlab
+
+volumes:
+  dbdata:
+
+networks:
+  gstlab:

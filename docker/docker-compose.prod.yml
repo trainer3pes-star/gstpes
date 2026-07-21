@@ -1,0 +1,18 @@
+# Production override — mirrors the isolation pattern used by the LMS's own
+# stack (docker/docker-compose.prod.yml in the peslms repo): bind nginx to
+# localhost only, drop MariaDB's host port entirely. A separate host-level
+# nginx (outside Docker) reverse-proxies the public subdomain to
+# 127.0.0.1:${HTTP_PORT}. Usage:
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+#
+# NOTE: Compose concatenates list-valued keys like `ports` across -f files
+# by default rather than replacing them — the `!override` tag forces a real
+# replacement so this doesn't end up with two conflicting bindings for the
+# same container port.
+services:
+  nginx:
+    ports: !override
+      - "127.0.0.1:${HTTP_PORT:-8090}:80"
+
+  mariadb:
+    ports: !override []

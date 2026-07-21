@@ -1,0 +1,16 @@
+.img-circle {
+  border-radius: 50%;
+  width: 25px;
+height: 25px;
+color: white;
+margin-right: 5px;
+margin-left: 5px;
+text-align: center;
+font-size: 18px;
+}
+.green_bg{	
+  background-color: #bac34e;
+}
+.red_bg{	
+  background-color: #F16436;
+}
