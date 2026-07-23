@@ -90,8 +90,9 @@ class Home extends CI_Controller
     
             $data['created_date'] = date('Y-m-d H:i:s');
             $data['is_active']    = 1;
-    
-            
+            $data['status']       = 0; // pending admin approval -- see Admin_model::get_user_list()
+
+
             if ($this->Home_model->save_user($data))
             {
             $this->session->set_flashdata('successmsg', 'Registration successful! Your account is pending admin approval.');

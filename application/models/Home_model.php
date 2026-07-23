@@ -166,7 +166,7 @@ public function save_new_password($data)
 	public function save_user($data)
 	{ 
 	
-		$this->db->insert('gst_user', array('id' => NULL ,'name' => $data['name'],'email'=>$data['email'],'contact'=>$data['contact'],'course'=>$data['course'],'password'=>$data['password'],'confirm_password'=>$data['confirm_password'],'created_date'=>$data['created_date'],'is_active'=>$data['is_active']));
+		$this->db->insert('gst_user', array('id' => NULL ,'name' => $data['name'],'email'=>$data['email'],'contact'=>$data['contact'],'course'=>$data['course'],'password'=>$data['password'],'confirm_password'=>$data['confirm_password'],'created_date'=>$data['created_date'],'is_active'=>$data['is_active'],'status'=>$data['status']));
 		$id=$this->db->insert_id(); 
  		return $id; 
 	}
