@@ -96,48 +96,50 @@ class Home extends CI_Controller
             if ($this->Home_model->save_user($data))
             {
             $this->session->set_flashdata('successmsg', 'Registration successful! Your account is pending admin approval.');
-            
-            //send mail to admin
-            $admin_email = array('knowledge@practicaleduskills.com', 'academics@practicaleduskills.com');
-            
-            $subject = 'New User Registration - Approval Required';
-            
-            $message = "
-                <h3>New User Registration</h3>
-                <p>A new user has registered and is waiting for approval.</p>
-            
-                <p><strong>Name:</strong> ".$data['name']."</p>
-                <p><strong>Email:</strong> ".$data['email']."</p>
-            
-                <p>Please login to admin panel and approve the user.</p>
-            ";
-            
-            // call your existing mail function
-            $this->Home_model->send_mail($admin_email, $subject, $message);
-            
-            // 2. SEND MAIL TO USER
 
-            $user_subject = 'Registration Successful - Awaiting Approval';
-            
-            $user_message = "
-                <h3>Welcome, ".$data['name']."!</h3>
-            
-                <p>Thank you for registering with us.</p>
-            
-                <p>Your account has been created successfully and is currently 
-                <strong>pending admin approval</strong>.</p>
-            
-                <h4>Your Details:</h4>
-                <p><strong>Name:</strong> ".$data['name']."</p>
-                <p><strong>Email:</strong> ".$data['email']."</p>
-                <p><strong>Mobile:</strong> ".$data['contact']."</p>
-            
-                <br>
-                <p>Regards,<br>Team</p>
-            ";
-            
-            $this->Home_model->send_mail($data['email'], $user_subject, $user_message);
-    
+            // Email notifications are switched off for now (set
+            // EMAIL_NOTIFICATIONS_ENABLED=true in docker/.env to turn back
+            // on once real SMTP credentials are configured) -- admin
+            // reviews the User List / User Approval List directly instead.
+            if (getenv('EMAIL_NOTIFICATIONS_ENABLED') === 'true') {
+                $admin_email = array('knowledge@practicaleduskills.com', 'academics@practicaleduskills.com');
+
+                $subject = 'New User Registration - Approval Required';
+
+                $message = "
+                    <h3>New User Registration</h3>
+                    <p>A new user has registered and is waiting for approval.</p>
+
+                    <p><strong>Name:</strong> ".$data['name']."</p>
+                    <p><strong>Email:</strong> ".$data['email']."</p>
+
+                    <p>Please login to admin panel and approve the user.</p>
+                ";
+
+                $this->Home_model->send_mail($admin_email, $subject, $message);
+
+                $user_subject = 'Registration Successful - Awaiting Approval';
+
+                $user_message = "
+                    <h3>Welcome, ".$data['name']."!</h3>
+
+                    <p>Thank you for registering with us.</p>
+
+                    <p>Your account has been created successfully and is currently
+                    <strong>pending admin approval</strong>.</p>
+
+                    <h4>Your Details:</h4>
+                    <p><strong>Name:</strong> ".$data['name']."</p>
+                    <p><strong>Email:</strong> ".$data['email']."</p>
+                    <p><strong>Mobile:</strong> ".$data['contact']."</p>
+
+                    <br>
+                    <p>Regards,<br>Team</p>
+                ";
+
+                $this->Home_model->send_mail($data['email'], $user_subject, $user_message);
+            }
+
             // redirect
             redirect('home/register');
                         

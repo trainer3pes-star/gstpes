@@ -107,9 +107,27 @@ class Admin_model extends CI_Model {
     }
 }
 
-public function getIPAddress() {  
-    
-		if(!empty($_SERVER['HTTP_CLIENT_IP'])) {  
+public function reset_user_password($user_id, $new_plain_password) {
+    $this->db->where('id', $user_id);
+    $exists = $this->db->get('gst_user')->row();
+    if (!$exists) {
+        return false;
+    }
+
+    $hashed = password_hash($new_plain_password, PASSWORD_DEFAULT);
+
+    $this->db->where('id', $user_id);
+    return $this->db->update('gst_user', array(
+        'password' => $hashed,
+        'confirm_password' => $hashed,
+        'varification_code' => NULL,
+        'varification_code_expires' => NULL,
+    ));
+}
+
+public function getIPAddress() {
+
+		if(!empty($_SERVER['HTTP_CLIENT_IP'])) {
 			$ip = $_SERVER['HTTP_CLIENT_IP'];  
 		}   
 		elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {  

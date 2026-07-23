@@ -403,7 +403,33 @@ public function unapprove_users()
 
     echo json_encode(['success' => 1]);
 }
- 
+
+  public function reset_user_password() {
+    if (!(@$this->data['login_user_info']->type==1 || @$this->data['login_user_info']->type==2)) {
+        echo json_encode(['success' => 0, 'message' => 'Not authorized.']);
+        return;
+    }
+
+    $id = $this->input->post('id');
+    if (!$id) {
+        echo json_encode(['success' => 0, 'message' => 'Missing user id.']);
+        return;
+    }
+
+    // Random 8-character password, easy to read aloud/type (no ambiguous
+    // characters like 0/O or 1/l/I).
+    $chars = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+    $new_password = '';
+    for ($i = 0; $i < 8; $i++) {
+        $new_password .= $chars[random_int(0, strlen($chars) - 1)];
+    }
+
+    if ($this->Admin_model->reset_user_password($id, $new_password)) {
+        echo json_encode(['success' => 1, 'password' => $new_password]);
+    } else {
+        echo json_encode(['success' => 0, 'message' => 'User not found.']);
+    }
+}
 
 
 }

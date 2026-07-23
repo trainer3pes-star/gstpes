@@ -74,7 +74,9 @@
                 <?php } else { ?>
                     <a href="javascript:void(0);" onclick="toggleUserStatus(<?php echo $result->id ?>, 1)">Activate</a>
                 <?php } ?>
-                                        </td> 
+                                         |
+                <a href="javascript:void(0);" onclick="resetPassword(<?php echo $result->id ?>, '<?php echo addslashes($result->name); ?>')">Reset Password</a>
+                                        </td>
                                         <td>
     <?php 
         if ($result->status == 0) {
@@ -108,6 +110,28 @@
 </div>
 
 <script>
+function resetPassword(userId, name) {
+    if (!confirm("Reset password for " + name + "? A new password will be generated -- copy it and tell them directly.")) {
+        return;
+    }
+    $.ajax({
+        url: "<?php echo base_url('admin/reset_user_password'); ?>",
+        type: 'POST',
+        data: { id: userId },
+        dataType: 'json',
+        success: function(response) {
+            if (response.success == 1) {
+                prompt("New password for " + name + " (copy this and share it with them):", response.password);
+            } else {
+                alert(response.message ? response.message : "Failed to reset password.");
+            }
+        },
+        error: function() {
+            alert("Error while resetting password.");
+        }
+    });
+}
+
 function toggleUserStatus(userId, newStatus) {
     if (confirm("Are you sure you want to " + (newStatus == 1 ? "Activate" : "Deactivate") + " this user?")) {
         $.ajax({
