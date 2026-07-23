@@ -71,10 +71,8 @@ class Home_model extends CI_Model {
         if ($this->email->send()) {
             return true;
         } else {
-            
-            echo "<pre>";
-            print_r($this->email->print_debugger());
-            exit;
+            log_message('error', 'send_mail failed to ' . (is_array($to) ? implode(',', $to) : $to) . ': ' . $this->email->print_debugger(array('headers')));
+            return false;
         }
     }
 	
