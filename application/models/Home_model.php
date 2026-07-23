@@ -89,10 +89,11 @@ class Home_model extends CI_Model {
 		if($data_rn->id)
 		{
 			$varification_code = rand(000000,999999);
-			$data['varification_code']=$varification_code;	
+			$data['varification_code']=$varification_code;
+			$expires = date('Y-m-d H:i:s', strtotime('+30 minutes'));
 
 			$this->db->where('id', $data_rn->id); // update query
-     		$this->db->update('gst_user', array('varification_code' =>$varification_code));
+     		$this->db->update('gst_user', array('varification_code' =>$varification_code, 'varification_code_expires' => $expires));
      		 // echo $this->db->last_query();
 
     //  		$data['settings']=$this->Home_model->get_setting(); 
@@ -125,16 +126,17 @@ class Home_model extends CI_Model {
 		$this->db->from('gst_user');
 		$this->db->where('id', $data['user_id']);
 		$this->db->where('varification_code', $data['varification_code']);
-// 		$this->db->where('is_verify_link', '0');
 		$query = $this->db->get();
 		$data_rn= $query->row();
-		// echo $this->db->last_query();
-		if($data_rn->id)
-		{		
+		if($data_rn && $data_rn->id)
+		{
+			if (empty($data_rn->varification_code_expires) || strtotime($data_rn->varification_code_expires) < time()) {
+				return 0; // expired
+			}
 			return 1;
 		}else{
 			return 0;
-		}			 
+		}
 	}
 	
 public function save_new_password($data)
@@ -147,16 +149,19 @@ public function save_new_password($data)
     if (!$user) {
         return 0;
     }
+    if (empty($user->varification_code_expires) || strtotime($user->varification_code_expires) < time()) {
+        return 0; // expired
+    }
 
-    
     $hashed_password = password_hash($data['password'], PASSWORD_DEFAULT);
 
-    
+
     $this->db->where('id', $data['user_id']);
     $this->db->update('gst_user', array(
         'password' => $hashed_password,
-        'confirm_password' => $hashed_password, 
-        'varification_code' => NULL
+        'confirm_password' => $hashed_password,
+        'varification_code' => NULL,
+        'varification_code_expires' => NULL
     ));
 
     return ($this->db->affected_rows() > 0) ? 1 : 0;

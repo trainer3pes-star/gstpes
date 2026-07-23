@@ -91,7 +91,7 @@ $(document).ready(function() {
                 if (response.success == 1) {
                     window.location.href = response.url;
                 } else {
-                    alert("Invalid Username and Password");
+                    alert(response.message ? response.message : "Invalid Username and Password");
                     window.location.href = response.url;
                 }
             },

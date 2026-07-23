@@ -326,8 +326,7 @@ public function unapprove_users()
 	  $this->load->helper('url');
 		$this->load->library('session');
 		$this->data['auto_username']=get_cookie('auto_username');
-		$this->data['auto_password']=get_cookie('auto_password');
- 	  $this->data['page_name'] = 'login'; 
+ 	  $this->data['page_name'] = 'login';
  	  $this->data['folder'] = 'admin';   
 		$this->load->view('index',@$this->data); 
 	  
@@ -339,23 +338,23 @@ public function unapprove_users()
         
         $data['username'] = $this->input->post('username');
         $data['password'] = $this->input->post('password');
-    
-        // Set cookies
+
+        // Remember the username only -- never cache the password itself.
         set_cookie('auto_username', $data['username'], 3600);
-        set_cookie('auto_password', $data['password'], 3600);
-    
+
         $is_logged_in = $this->Admin_model->get_login($data);
-    
+
         if ($is_logged_in == 1) {
             $response['success'] = 1;
             $response['redirect'] = 1;
             $response['url'] ='user_list_report';
-        } else {
-           
+        } elseif ($is_logged_in == 3) {
+            $response['message'] = 'Too many failed attempts. Account locked for 15 minutes.';
             $response['url'] ='login';
-          
+        } else {
+            $response['url'] ='login';
         }
-    
+
         echo json_encode($response);
    }
 

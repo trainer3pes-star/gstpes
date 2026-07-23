@@ -1,5 +1,9 @@
 <?php
-error_reporting(0);
+// error_reporting is handled by index.php's ENVIRONMENT switch (see
+// docker/nginx/default.conf's CI_ENV=production fastcgi_param) -- do not
+// blanket-override it here. A hardcoded error_reporting(0) previously sat
+// here and silently swallowed every PHP error/warning app-wide, on top of
+// log_threshold already being 0 below -- meaning failures left zero trace.
 date_default_timezone_set('Asia/Kolkata');
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -216,7 +220,7 @@ $config['directory_trigger'] = 'd';
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 1; // 1 = log PHP/DB errors only (see application/logs/)
 
 /*
 |--------------------------------------------------------------------------

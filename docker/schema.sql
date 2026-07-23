@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS gst_user (
     is_active VARCHAR(255) NULL,
     status VARCHAR(255) NULL,
     varification_code VARCHAR(255) NULL,
+    varification_code_expires DATETIME NULL,
     last_login DATETIME NULL,
     current_login DATETIME NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -58,7 +59,9 @@ CREATE TABLE IF NOT EXISTS gst_admin (
     created_date DATETIME NULL,
     type VARCHAR(255) NULL,
     last_login DATETIME NULL,
-    current_login DATETIME NULL
+    current_login DATETIME NULL,
+    failed_login_attempts INT NOT NULL DEFAULT 0,
+    locked_until DATETIME NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ---------------------------------------------------------------------

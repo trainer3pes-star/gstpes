@@ -609,17 +609,17 @@ public function reset_password()
 		$data['user_id'] = $this->data['login_user_info']->id;
     
 
-        $taxable_values = $this->input->post('taxable_value');
-        $rates = $this->input->post('rate');
-        $taxes = $this->input->post('tax');
-        $cesses = $this->input->post('cess');
-    
+        $taxable_values = (array) $this->input->post('taxable_value');
+        $rates = (array) $this->input->post('rate');
+        $taxes = (array) $this->input->post('tax');
+        $cesses = (array) $this->input->post('cess');
+
         // Save main invoice
         $invoice_id = $this->Home_model->save_b2b_addInvoice($data);
-    
+
         if ($invoice_id) {
-    
-            for ($i = 0; $i < count($taxable_values); $i++) {
+            $row_count = min(count($taxable_values), count($rates), count($taxes), count($cesses));
+            for ($i = 0; $i < $row_count; $i++) {
                 if (
                     $taxable_values[$i] === '' || 
                     (empty($taxes[$i]) && empty($cesses[$i]))
@@ -790,17 +790,17 @@ public function reset_password()
       
     
 
-        $taxable_values = $this->input->post('taxable_value');
-        $rates = $this->input->post('rate');
-        $taxes = $this->input->post('tax');
-        $cesses = $this->input->post('cess');
-    
+        $taxable_values = (array) $this->input->post('taxable_value');
+        $rates = (array) $this->input->post('rate');
+        $taxes = (array) $this->input->post('tax');
+        $cesses = (array) $this->input->post('cess');
+
         // Save main invoice
         $invoice_id = $this->Home_model->save_b2c_addInvoice($data);
-    
+
         if ($invoice_id) {
-    
-            for ($i = 0; $i < count($taxable_values); $i++) {
+            $row_count = min(count($taxable_values), count($rates), count($taxes), count($cesses));
+            for ($i = 0; $i < $row_count; $i++) {
                if (
                     $taxable_values[$i] === '' || 
                     (empty($taxes[$i]) && empty($cesses[$i]))
@@ -937,16 +937,17 @@ public function reset_password()
         $data['gst_payment'] = $this->input->post('gst_payment');
 		$data['user_id'] = $this->data['login_user_info']->id;
       
-        $taxable_values = $this->input->post('taxable_value');
-        $rates = $this->input->post('rate');
-        $taxes = $this->input->post('tax');
-        $cesses = $this->input->post('cess');
-        
-       
+        $taxable_values = (array) $this->input->post('taxable_value');
+        $rates = (array) $this->input->post('rate');
+        $taxes = (array) $this->input->post('tax');
+        $cesses = (array) $this->input->post('cess');
+
+
         $invoice_id = $this->Home_model->save_exports_invoiceadd($data);
-        
+
         if ($invoice_id) {
-            for ($i = 0; $i < count($taxable_values); $i++) {
+            $row_count = min(count($taxable_values), count($rates), count($taxes), count($cesses));
+            for ($i = 0; $i < $row_count; $i++) {
                 if (
                     $taxable_values[$i] === '' || 
                     (empty($taxes[$i]) && empty($cesses[$i]))
@@ -1190,16 +1191,17 @@ public function reset_password()
     public function save_online_nil_rated_supplies()
     {
         $data['id']=$this->input->post('id');
-        $descriptions = $this->input->post('description');
-        $nil_rated = $this->input->post('nil_rated_supplies');
-        $exempted = $this->input->post('exempted');
-        $non_gst = $this->input->post('non_gst_supplies');
+        $descriptions = (array) $this->input->post('description');
+        $nil_rated = (array) $this->input->post('nil_rated_supplies');
+        $exempted = (array) $this->input->post('exempted');
+        $non_gst = (array) $this->input->post('non_gst_supplies');
 		$user_id = $this->data['login_user_info']->id;
 
-    
+
         $data = [];
-    
-        for ($i = 0; $i < count($descriptions); $i++) {
+
+        $row_count = min(count($descriptions), count($nil_rated), count($exempted), count($non_gst));
+        for ($i = 0; $i < $row_count; $i++) {
             
             $data[] = [
                 'description' => $descriptions[$i],
@@ -1253,17 +1255,17 @@ public function reset_password()
         $data['is_diff_perc'] = $this->input->post('is_diff_perc') ? 1 : 0;
         $data['user_id'] = $this->data['login_user_info']->id;
 
-        $taxable_values = $this->input->post('taxable_value');
-        $rates = $this->input->post('rate');
-        $taxes = $this->input->post('tax');
-        $cesses = $this->input->post('cess');
-    
+        $taxable_values = (array) $this->input->post('taxable_value');
+        $rates = (array) $this->input->post('rate');
+        $taxes = (array) $this->input->post('tax');
+        $cesses = (array) $this->input->post('cess');
+
         // Save main invoice
         $invoice_id = $this->Home_model->save_registered_noteadd($data);
-    
+
         if ($invoice_id) {
-    
-            for ($i = 0; $i < count($taxable_values); $i++) {
+            $row_count = min(count($taxable_values), count($rates), count($taxes), count($cesses));
+            for ($i = 0; $i < $row_count; $i++) {
                 if (
                     $taxable_values[$i] === '' || 
                     (empty($taxes[$i]) && empty($cesses[$i]))
@@ -1348,17 +1350,17 @@ public function reset_password()
         $data['is_diff_perc'] = $this->input->post('is_diff_perc') ? 1 : 0;
 		$data['user_id'] = $this->data['login_user_info']->id;
        
-        $taxable_values = $this->input->post('taxable_value');
-        $rates = $this->input->post('rate');
-        $taxes = $this->input->post('tax');
-        $cesses = $this->input->post('cess');
-    
+        $taxable_values = (array) $this->input->post('taxable_value');
+        $rates = (array) $this->input->post('rate');
+        $taxes = (array) $this->input->post('tax');
+        $cesses = (array) $this->input->post('cess');
+
         // Save main invoice
         $invoice_id = $this->Home_model->save_unregistered_noteadd($data);
-    
+
         if ($invoice_id) {
-    
-            for ($i = 0; $i < count($taxable_values); $i++) {
+            $row_count = min(count($taxable_values), count($rates), count($taxes), count($cesses));
+            for ($i = 0; $i < $row_count; $i++) {
                if (
                     $taxable_values[$i] === '' || 
                     (empty($taxes[$i]) && empty($cesses[$i]))
@@ -1488,17 +1490,17 @@ public function reset_password()
         $data['is_diff_perc'] = $this->input->post('is_diff_perc') ? 1 : 0;
 		$data['user_id'] = $this->data['login_user_info']->id;
        
-        $taxable_values = $this->input->post('taxable_value');
-        $rates = $this->input->post('rate');
-        $taxes = $this->input->post('tax');
-        $cesses = $this->input->post('cess');
-    
+        $taxable_values = (array) $this->input->post('taxable_value');
+        $rates = (array) $this->input->post('rate');
+        $taxes = (array) $this->input->post('tax');
+        $cesses = (array) $this->input->post('cess');
+
         // Save main invoice
         $invoice_id = $this->Home_model->save_advtax_liability($data);
-    
+
         if ($invoice_id) {
-    
-            for ($i = 0; $i < count($taxable_values); $i++) {
+            $row_count = min(count($taxable_values), count($rates), count($taxes), count($cesses));
+            for ($i = 0; $i < $row_count; $i++) {
                 if (
                     $taxable_values[$i] === '' || 
                     (empty($taxes[$i]) && empty($cesses[$i]))
@@ -1629,17 +1631,17 @@ public function reset_password()
         $data['is_diff_perc'] = $this->input->post('is_diff_perc') ? 1 : 0;
 		$data['user_id'] = $this->data['login_user_info']->id;
        
-        $taxable_values = $this->input->post('taxable_value');
-        $rates = $this->input->post('rate');
-        $taxes = $this->input->post('tax');
-        $cesses = $this->input->post('cess');
-    
+        $taxable_values = (array) $this->input->post('taxable_value');
+        $rates = (array) $this->input->post('rate');
+        $taxes = (array) $this->input->post('tax');
+        $cesses = (array) $this->input->post('cess');
+
         // Save main invoice
         $invoice_id = $this->Home_model->save_tax_paid($data);
-    
+
         if ($invoice_id) {
-    
-            for ($i = 0; $i < count($taxable_values); $i++) {
+            $row_count = min(count($taxable_values), count($rates), count($taxes), count($cesses));
+            for ($i = 0; $i < $row_count; $i++) {
                 if (
                     $taxable_values[$i] === '' || 
                     (empty($taxes[$i]) && empty($cesses[$i]))
@@ -2094,17 +2096,18 @@ public function reset_password()
 	
 	public function save_document()
     {
-        $is_table  = $this->input->post('is_table'); 
-        $from_serial_number = $this->input->post('from_serial_number');
-        $to_serial_number = $this->input->post('to_serial_number');
-        $total_number = $this->input->post('total_number');
-        $cancelled_number = $this->input->post('cancelled_number');
-        $net_number = $this->input->post('net_number');
+        $is_table  = (array) $this->input->post('is_table');
+        $from_serial_number = (array) $this->input->post('from_serial_number');
+        $to_serial_number = (array) $this->input->post('to_serial_number');
+        $total_number = (array) $this->input->post('total_number');
+        $cancelled_number = (array) $this->input->post('cancelled_number');
+        $net_number = (array) $this->input->post('net_number');
         $user_id = $this->data['login_user_info']->id;
-    
+
         $all_data = [];
-    
-        for ($i = 0; $i < count($from_serial_number); $i++) {
+
+        $row_count = min(count($is_table), count($from_serial_number), count($to_serial_number), count($total_number), count($cancelled_number), count($net_number));
+        for ($i = 0; $i < $row_count; $i++) {
             $detail = [
                 'is_table' => $is_table[$i],
                 'from_serial_number'=> $from_serial_number[$i],

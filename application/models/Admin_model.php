@@ -20,9 +20,43 @@ class Admin_model extends CI_Model {
     $this->db->select('*');
     $this->db->from('gst_admin');
     $this->db->where('email', $data['username']);
-    $this->db->where('password', $data['password']); // Use hashed password in production
     $query = $this->db->get();
     $data_rn = $query->row();
+
+    if (empty($data_rn) || !$data_rn->id) {
+        return 0;
+    }
+
+    // Account lockout after repeated failed attempts
+    if (!empty($data_rn->locked_until) && strtotime($data_rn->locked_until) > time()) {
+        return 3; // locked
+    }
+
+    $input_password = $data['password'];
+    $db_password = $data_rn->password;
+
+    $password_ok = password_verify($input_password, $db_password)
+        || $input_password === $db_password; // legacy plaintext, migrated below
+
+    if (!$password_ok) {
+        $attempts = (int) $data_rn->failed_login_attempts + 1;
+        $update = ['failed_login_attempts' => $attempts];
+        if ($attempts >= 5) {
+            $update['locked_until'] = date('Y-m-d H:i:s', strtotime('+15 minutes'));
+        }
+        $this->db->where('id', $data_rn->id);
+        $this->db->update('gst_admin', $update);
+        return 0;
+    }
+
+    // Successful login: reset lockout counters, and if the stored password
+    // was still plaintext (legacy), transparently upgrade it to a hash.
+    $reset = ['failed_login_attempts' => 0, 'locked_until' => null];
+    if ($input_password === $db_password && !password_verify($input_password, $db_password)) {
+        $reset['password'] = password_hash($input_password, PASSWORD_DEFAULT);
+    }
+    $this->db->where('id', $data_rn->id);
+    $this->db->update('gst_admin', $reset);
 
     if (!empty($data_rn) && $data_rn->id) {
         // Set session
