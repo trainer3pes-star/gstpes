@@ -201,9 +201,9 @@ public function save_new_password($data)
     public function get_taxpayer_info($data)
     {
        
-        $this->db->select('gst_taxpayer.*, user.name as username, user.email, user.contact,user.current_login'); 
+        $this->db->select('gst_taxpayer.*, gst_user.name as username, gst_user.email, gst_user.contact, gst_user.current_login');
         $this->db->from('gst_taxpayer');
-        $this->db->join('user', 'user.id = gst_taxpayer.user_id', 'left'); 
+        $this->db->join('gst_user', 'gst_user.id = gst_taxpayer.user_id', 'left');
         $this->db->where('gst_taxpayer.user_id', $data->user_id);
         
         $query = $this->db->get();
@@ -453,9 +453,12 @@ public function logout()
 	
 	public function save_b2b_invoice_detail($data)
     {
-         $this->db->where('invoice_id', $data['invoice_id']);
-         $this->db->delete('gst_invoice_details');
-        return $this->db->insert('gst_invoice_details', $data);
+        $this->db->trans_start();
+        $this->db->where('invoice_id', $data['invoice_id']);
+        $this->db->delete('gst_invoice_details');
+        $this->db->insert('gst_invoice_details', $data);
+        $this->db->trans_complete();
+        return $this->db->trans_status();
     }
     
     public function get_return_b2b_summary_list($id)
@@ -651,9 +654,12 @@ public function logout()
 	
 		public function save_b2c_invoice_detail($data)
     {
-         $this->db->where('invoice_id', $data['invoice_id']);
-         $this->db->delete('gst_b2cinvoice_details');
-        return $this->db->insert('gst_b2cinvoice_details', $data);
+        $this->db->trans_start();
+        $this->db->where('invoice_id', $data['invoice_id']);
+        $this->db->delete('gst_b2cinvoice_details');
+        $this->db->insert('gst_b2cinvoice_details', $data);
+        $this->db->trans_complete();
+        return $this->db->trans_status();
     }
     
     public function get_b2c_summary_list($data = false, $lang_id = 1)
@@ -785,39 +791,54 @@ public function logout()
     }
 
     public function b2b_delete($data)
-    {   
-    //   print_r($data['id']);exit();
+    {
+        $this->db->where('id', $data['id']);
+        $this->db->where('user_id', $data['user_id']);
+        if (!$this->db->get('gst_invoice_master')->row()) {
+            return false; // not found, or doesn't belong to this user
+        }
         $this->db->where('invoice_id',$data['id']);
         $this->db->delete('gst_invoice_details');
         $this->db->where('id',$data['id']);
+        $this->db->where('user_id', $data['user_id']);
         $this->db->delete('gst_invoice_master');
-        
+
         return true;
-    
+
     }
 
     public function register_delete($data)
-    {   
-        // print_r($data['id']);exit();
+    {
+        $this->db->where('id', $data['id']);
+        $this->db->where('user_id', $data['user_id']);
+        if (!$this->db->get('gst_registerednote')->row()) {
+            return false;
+        }
         $this->db->where('invoice_id',$data['id']);
         $this->db->delete('gst_registerednote_details');
         $this->db->where('id',$data['id']);
+        $this->db->where('user_id', $data['user_id']);
         $this->db->delete('gst_registerednote');
-        
+
         return true;
-    
+
     }
-    
+
     public function b2c_delete($data)
-    {   
-       
+    {
+        $this->db->where('id', $data['id']);
+        $this->db->where('user_id', $data['user_id']);
+        if (!$this->db->get('gst_b2cinvoice_master')->row()) {
+            return false;
+        }
         $this->db->where('invoice_id',$data['id']);
         $this->db->delete('gst_b2cinvoice_details');
         $this->db->where('id',$data['id']);
+        $this->db->where('user_id', $data['user_id']);
         $this->db->delete('gst_b2cinvoice_master');
-        
+
         return true;
-    
+
     }
 
     
@@ -842,9 +863,12 @@ public function logout()
 	
     public function save_exports_invoiceadd_detail($data)
     {
+        $this->db->trans_start();
         $this->db->where('invoice_id', $data['invoice_id']);
-         $this->db->delete('gst_exportsinvoice_details');
-        return $this->db->insert('gst_exportsinvoice_details', $data);
+        $this->db->delete('gst_exportsinvoice_details');
+        $this->db->insert('gst_exportsinvoice_details', $data);
+        $this->db->trans_complete();
+        return $this->db->trans_status();
     }
 
 	public function get_exports_invoice_list($data = false, $lang_id = 1)
@@ -908,14 +932,19 @@ public function logout()
    
     
     public function export_invoice_delete($data)
-    {   
-       
+    {
+        $this->db->where('id', $data['id']);
+        $this->db->where('user_id', $data['user_id']);
+        if (!$this->db->get('gst_exportinvoice')->row()) {
+            return false;
+        }
         $this->db->where('invoice_id',$data['id']);
         $this->db->delete('gst_exportsinvoice_details');
         $this->db->where('id',$data['id']);
+        $this->db->where('user_id', $data['user_id']);
         $this->db->delete('gst_exportinvoice');
         return true;
-    
+
     }
   
     public function get_exports_invoice_info($data)
@@ -1009,10 +1038,11 @@ public function logout()
     }
     
     public function b2cs_Invoice_delete($data)
-    {    	
+    {
         $this->db->where('id', $data['id']);
-        $this->db->delete('gst_b2cs'); 
-        return 1;
+        $this->db->where('user_id', $data['user_id']);
+        $this->db->delete('gst_b2cs');
+        return $this->db->affected_rows() > 0;
     }
     
 	
@@ -1020,10 +1050,13 @@ public function logout()
     {
        $user_id = isset($data[0]['user_id']) ? $data[0]['user_id'] : 0;
 
-    // Delete existing records only for this user
+        $this->db->trans_start();
+        // Delete existing records only for this user
         $this->db->where('user_id', $user_id);
         $this->db->delete('gst_onlinenil');
-        return $this->db->insert_batch('gst_onlinenil', $data);
+        $this->db->insert_batch('gst_onlinenil', $data);
+        $this->db->trans_complete();
+        return $this->db->trans_status();
     }
 
     
@@ -1048,9 +1081,12 @@ public function logout()
 	
 	public function save_registered_noteadd_detail($data)
     {
-         $this->db->where('invoice_id', $data['invoice_id']);
-         $this->db->delete('gst_registerednote_details');
-        return $this->db->insert('gst_registerednote_details', $data);
+        $this->db->trans_start();
+        $this->db->where('invoice_id', $data['invoice_id']);
+        $this->db->delete('gst_registerednote_details');
+        $this->db->insert('gst_registerednote_details', $data);
+        $this->db->trans_complete();
+        return $this->db->trans_status();
     }
     
     public function get_registered_summary_list($data)
@@ -1084,9 +1120,12 @@ public function logout()
 	
 	public function save_unregistered_noteadd_detail($data)
     {
-         $this->db->where('invoice_id', $data['invoice_id']);
-         $this->db->delete('gst_unregisterednote_details');
-        return $this->db->insert('gst_unregisterednote_details', $data);
+        $this->db->trans_start();
+        $this->db->where('invoice_id', $data['invoice_id']);
+        $this->db->delete('gst_unregisterednote_details');
+        $this->db->insert('gst_unregisterednote_details', $data);
+        $this->db->trans_complete();
+        return $this->db->trans_status();
     }
     
     public function get_unregistered_note_list($data = false, $lang_id = 1)
@@ -1156,15 +1195,20 @@ public function logout()
     }
     
     public function unregistered_note_delete($data)
-    {   
-       
+    {
+        $this->db->where('id', $data['id']);
+        $this->db->where('user_id', $data['user_id']);
+        if (!$this->db->get('gst_unregisterednote')->row()) {
+            return false;
+        }
         $this->db->where('invoice_id',$data['id']);
         $this->db->delete('gst_unregisterednote_details');
         $this->db->where('id',$data['id']);
+        $this->db->where('user_id', $data['user_id']);
         $this->db->delete('gst_unregisterednote');
-        
+
         return true;
-    
+
     }
     
     public function save_advtax_liability($data)
@@ -1184,13 +1228,14 @@ public function logout()
 	
 	public function save_advtax_liability_detail($data)
     {
+        $this->db->trans_start();
         if (@$data['invoice_id']) {
-           
             $this->db->where('invoice_id', $data['invoice_id']);
             $this->db->delete('gst_advtaxliability_details');
         }
-    
-        return $this->db->insert('gst_advtaxliability_details', $data);
+        $this->db->insert('gst_advtaxliability_details', $data);
+        $this->db->trans_complete();
+        return $this->db->trans_status();
     }
 
     
@@ -1261,13 +1306,18 @@ public function logout()
     }
     
     public function advtax_liability_delete($data)
-    {   
-       
+    {
+        $this->db->where('id', $data['id']);
+        $this->db->where('user_id', $data['user_id']);
+        if (!$this->db->get('gst_advtaxliability')->row()) {
+            return false;
+        }
         $this->db->where('invoice_id',$data['id']);
         $this->db->delete('gst_advtaxliability_details');
         $this->db->where('id',$data['id']);
+        $this->db->where('user_id', $data['user_id']);
         $this->db->delete('gst_advtaxliability');
-        
+
         return true;
     
     }
@@ -1289,10 +1339,12 @@ public function logout()
 	
 	public function save_tax_paid_detail($data)
     {
-         $this->db->where('invoice_id', $data['invoice_id']);
-         $this->db->delete('gst_taxpaid_details');
-        
-        return $this->db->insert('gst_taxpaid_details', $data);
+        $this->db->trans_start();
+        $this->db->where('invoice_id', $data['invoice_id']);
+        $this->db->delete('gst_taxpaid_details');
+        $this->db->insert('gst_taxpaid_details', $data);
+        $this->db->trans_complete();
+        return $this->db->trans_status();
     }
     
     public function get_tax_paid_list($data = false, $lang_id = 1)
@@ -1362,13 +1414,18 @@ public function logout()
     }
     
     public function tax_paid_delete($data)
-    {   
-       
+    {
+        $this->db->where('id', $data['id']);
+        $this->db->where('user_id', $data['user_id']);
+        if (!$this->db->get('gst_taxpaid')->row()) {
+            return false;
+        }
         $this->db->where('invoice_id',$data['id']);
         $this->db->delete('gst_taxpaid_details');
         $this->db->where('id',$data['id']);
+        $this->db->where('user_id', $data['user_id']);
         $this->db->delete('gst_taxpaid');
-        
+
         return true;
     
     }
@@ -1431,10 +1488,11 @@ public function logout()
     }
     
     public function online_ecom_delete($data)
-    {    	
+    {
         $this->db->where('id', $data['id']);
-        $this->db->delete('gst_onlineecom'); 
-        return 1;
+        $this->db->where('user_id', $data['user_id']);
+        $this->db->delete('gst_onlineecom');
+        return $this->db->affected_rows() > 0;
     }
     
     public function save_hsn_summary($data)
@@ -1498,10 +1556,11 @@ public function logout()
     }
     
     public function hsn_summary_delete($data)
-    {    	
+    {
         $this->db->where('id', $data['id']);
-        $this->db->delete('gst_hsn'); 
-        return 1;
+        $this->db->where('user_id', $data['user_id']);
+        $this->db->delete('gst_hsn');
+        return $this->db->affected_rows() > 0;
     }
     
     public function save_online_supplies($data)
@@ -1565,10 +1624,11 @@ public function logout()
     }
     
     public function online_supplies_delete($data)
-    {    	
+    {
         $this->db->where('id', $data['id']);
-        $this->db->delete('gst_online_supplies'); 
-        return 1;
+        $this->db->where('user_id', $data['user_id']);
+        $this->db->delete('gst_online_supplies');
+        return $this->db->affected_rows() > 0;
     }
     
      public function save_document($data)
@@ -1578,9 +1638,12 @@ public function logout()
         }
     
         $user_id = isset($data[0]['user_id']) ? $data[0]['user_id'] : 0;
+        $this->db->trans_start();
         $this->db->where('user_id', $user_id);
         $this->db->delete('gst_document');
-        return $this->db->insert_batch('gst_document', $data);
+        $this->db->insert_batch('gst_document', $data);
+        $this->db->trans_complete();
+        return $this->db->trans_status();
     }
 
     
@@ -1678,9 +1741,12 @@ public function get_opening_balance_info($id)
 	    
 	}
 
-     public function update_status($id, $data)
+     public function update_status($id, $data, $user_id = null)
     {
         $this->db->where('id', $id);
+        if ($user_id !== null) {
+            $this->db->where('user_id', $user_id);
+        }
         return $this->db->update('gst_challan_details', $data);
     }
 	
@@ -1707,12 +1773,12 @@ public function get_opening_balance_info($id)
 
 	
 	public function challen_delete($data)
-    {   
-       
+    {
         $this->db->where('id',$data['id']);
+        $this->db->where('user_id', $data['user_id']);
         $this->db->delete('gst_challan_details');
-        return true;
-    
+        return $this->db->affected_rows() > 0;
+
     }
     
     public function get_challan_history_list($data=false,$lang_id=1)
@@ -1761,12 +1827,12 @@ public function get_opening_balance_info($id)
 	}
 	
 	public function challen_history_delete($data)
-    {   
-   
+    {
         $this->db->where('id',$data['id']);
+        $this->db->where('user_id', $data['user_id']);
         $this->db->delete('gst_challan_details');
-        return true;
-    
+        return $this->db->affected_rows() > 0;
+
     }
     
     public function get_state_name_by_gstin($gstin)

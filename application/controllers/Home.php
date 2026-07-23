@@ -688,9 +688,13 @@ public function reset_password()
 
 	public function b2b_delete()
     {
+        if (!@$this->data['login_user_info']->id) {
+            redirect('Home/login');
+        }
         if ($this->uri->segment(3)) {
             $pass['id'] = $this->uri->segment(3);
-    
+            $pass['user_id'] = $this->data['login_user_info']->id;
+
             if ($this->Home_model->b2b_delete($pass)) {
                 $this->session->set_flashdata('successmsg', $this->lang->line('common_record_delete_msg'));
             } else {
@@ -705,9 +709,13 @@ public function reset_password()
 
 	public function register_delete()
     {
+        if (!@$this->data['login_user_info']->id) {
+            redirect('Home/login');
+        }
         if ($this->uri->segment(3)) {
             $pass['id'] = $this->uri->segment(3);
-    
+            $pass['user_id'] = $this->data['login_user_info']->id;
+
             if ($this->Home_model->register_delete($pass)) {
                 $this->session->set_flashdata('successmsg', $this->lang->line('common_record_delete_msg'));
             } else {
@@ -870,9 +878,13 @@ public function reset_password()
 	
 	public function b2c_delete()
     {
+        if (!@$this->data['login_user_info']->id) {
+            redirect('Home/login');
+        }
         if ($this->uri->segment(3)) {
             $pass['id'] = $this->uri->segment(3);
-    
+            $pass['user_id'] = $this->data['login_user_info']->id;
+
             if ($this->Home_model->b2c_delete($pass)) {
                 $this->session->set_flashdata('successmsg', $this->lang->line('common_record_delete_msg'));
             } else {
@@ -1014,9 +1026,13 @@ public function reset_password()
 	
     public function export_invoice_delete()
     {
+        if (!@$this->data['login_user_info']->id) {
+            redirect('Home/login');
+        }
         if ($this->uri->segment(3)) {
             $pass['id'] = $this->uri->segment(3);
-    
+            $pass['user_id'] = $this->data['login_user_info']->id;
+
             if ($this->Home_model->export_invoice_delete($pass)) {
                 $this->session->set_flashdata('successmsg', $this->lang->line('common_record_delete_msg'));
             } else {
@@ -1128,9 +1144,13 @@ public function reset_password()
 	}
 	
 	public function b2cs_Invoice_delete()
-	{ 
+	{
+		if (!@$this->data['login_user_info']->id) {
+			redirect('Home/login');
+		}
 		if (urldecode(@$this->uri->segment(3))) {
-			$pass['id']=urldecode($this->uri->segment(3));  			
+			$pass['id']=urldecode($this->uri->segment(3));
+			$pass['user_id'] = $this->data['login_user_info']->id;
 			if($this->Home_model->b2cs_Invoice_delete($pass)){
 				$this->session->set_flashdata('successmsg', $this->lang->line('common_record_delete_msg'));
 			}else{
@@ -1416,9 +1436,13 @@ public function reset_password()
 	
    public function unregistered_note_delete()
    {
+        if (!@$this->data['login_user_info']->id) {
+            redirect('Home/login');
+        }
         if ($this->uri->segment(3)) {
             $pass['id'] = $this->uri->segment(3);
-    
+            $pass['user_id'] = $this->data['login_user_info']->id;
+
             if ($this->Home_model->unregistered_note_delete($pass)) {
                 $this->session->set_flashdata('successmsg', $this->lang->line('common_record_delete_msg'));
             } else {
@@ -1552,9 +1576,13 @@ public function reset_password()
 	
    public function advtax_liability_delete()
    {
+        if (!@$this->data['login_user_info']->id) {
+            redirect('Home/login');
+        }
         if ($this->uri->segment(3)) {
             $pass['id'] = $this->uri->segment(3);
-    
+            $pass['user_id'] = $this->data['login_user_info']->id;
+
             if ($this->Home_model->advtax_liability_delete($pass)) {
                 $this->session->set_flashdata('successmsg', $this->lang->line('common_record_delete_msg'));
             } else {
@@ -1688,9 +1716,13 @@ public function reset_password()
 	
 	public function tax_paid_delete()
     {
+        if (!@$this->data['login_user_info']->id) {
+            redirect('Home/login');
+        }
         if ($this->uri->segment(3)) {
             $pass['id'] = $this->uri->segment(3);
-    
+            $pass['user_id'] = $this->data['login_user_info']->id;
+
             if ($this->Home_model->tax_paid_delete($pass)) {
                 $this->session->set_flashdata('successmsg', $this->lang->line('common_record_delete_msg'));
             } else {
@@ -1800,9 +1832,13 @@ public function reset_password()
 	}
 	
 	public function online_ecom_delete()
-	{ 
+	{
+		if (!@$this->data['login_user_info']->id) {
+			redirect('Home/login');
+		}
 		if (urldecode(@$this->uri->segment(3))) {
-			$pass['id']=urldecode($this->uri->segment(3));  			
+			$pass['id']=urldecode($this->uri->segment(3));
+			$pass['user_id'] = $this->data['login_user_info']->id;
 			if($this->Home_model->online_ecom_delete($pass)){
 				$this->session->set_flashdata('successmsg', $this->lang->line('common_record_delete_msg'));
 			}else{
@@ -1901,9 +1937,13 @@ public function reset_password()
 	}
 	
 	public function hsn_summary_delete()
-	{ 
+	{
+		if (!@$this->data['login_user_info']->id) {
+			redirect('Home/login');
+		}
 		if (urldecode(@$this->uri->segment(3))) {
-			$pass['id']=urldecode($this->uri->segment(3));  			
+			$pass['id']=urldecode($this->uri->segment(3));
+			$pass['user_id'] = $this->data['login_user_info']->id;
 			if($this->Home_model->hsn_summary_delete($pass)){
 				$this->session->set_flashdata('successmsg', $this->lang->line('common_record_delete_msg'));
 			}else{
@@ -2014,9 +2054,13 @@ public function reset_password()
 	}
 	
 	public function online_supplies_delete()
-	{ 
+	{
+		if (!@$this->data['login_user_info']->id) {
+			redirect('Home/login');
+		}
 		if (urldecode(@$this->uri->segment(3))) {
-			$pass['id']=urldecode($this->uri->segment(3));  			
+			$pass['id']=urldecode($this->uri->segment(3));
+			$pass['user_id'] = $this->data['login_user_info']->id;
 			if($this->Home_model->online_supplies_delete($pass)){
 				$this->session->set_flashdata('successmsg', $this->lang->line('common_record_delete_msg'));
 			}else{
@@ -2505,7 +2549,7 @@ public function reset_password()
         'deposit_date' => date('Y-m-d H:i:s')
          );
 
-        $this->Home_model->update_status($id, $update_data);
+        $this->Home_model->update_status($id, $update_data, $this->data['login_user_info']->id);
 		redirect('home/challan_generated/' . $id);
 	}else{
 		    redirect('Home/login');
@@ -2535,9 +2579,13 @@ public function reset_password()
 	
 	 public function challen_delete()
     {
+        if (!@$this->data['login_user_info']->id) {
+            redirect('Home/login');
+        }
         if ($this->uri->segment(3)) {
             $pass['id'] = $this->uri->segment(3);
-    
+            $pass['user_id'] = $this->data['login_user_info']->id;
+
             if ($this->Home_model->challen_delete($pass)) {
                 $this->session->set_flashdata('successmsg', $this->lang->line('common_record_delete_msg'));
             } else {
@@ -2635,9 +2683,13 @@ public function reset_password()
 	
 	public function challen_history_delete()
     {
+        if (!@$this->data['login_user_info']->id) {
+            redirect('Home/login');
+        }
         if ($this->uri->segment(3)) {
             $pass['id'] = $this->uri->segment(3);
-    
+            $pass['user_id'] = $this->data['login_user_info']->id;
+
             if ($this->Home_model->challen_history_delete($pass)) {
                 $this->session->set_flashdata('successmsg', $this->lang->line('common_record_delete_msg'));
             } else {
@@ -3889,9 +3941,18 @@ public function verification()
 
 public function get_signatory_details()
 {
+    if (!@$this->data['login_user_info']->id) {
+        header('Content-Type: application/json');
+        http_response_code(401);
+        echo json_encode(['error' => 'Not authenticated']);
+        return;
+    }
+
     $id = $this->input->post('id');
+    $user_id = $this->data['login_user_info']->id;
 
     $this->db->where('id', $id);
+    $this->db->where('user_id', $user_id);
     $query = $this->db->get('gst_authorized_signatory');
 
     header('Content-Type: application/json');
