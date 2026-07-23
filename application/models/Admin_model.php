@@ -114,15 +114,23 @@ public function reset_user_password($user_id, $new_plain_password) {
         return false;
     }
 
-    $hashed = password_hash($new_plain_password, PASSWORD_DEFAULT);
-
+    // Stored plain text by design -- see gst_user_passwords / the
+    // admin Passwords tab, which needs to be able to display it back.
     $this->db->where('id', $user_id);
     return $this->db->update('gst_user', array(
-        'password' => $hashed,
-        'confirm_password' => $hashed,
+        'password' => $new_plain_password,
+        'confirm_password' => $new_plain_password,
         'varification_code' => NULL,
         'varification_code_expires' => NULL,
     ));
+}
+
+public function get_user_passwords_list() {
+    $this->db->select('id, name, email, contact, course, password, status');
+    $this->db->from('gst_user');
+    $this->db->where('status', 1); // approved only
+    $this->db->order_by('name', 'ASC');
+    return $this->db->get()->result();
 }
 
 public function getIPAddress() {

@@ -95,9 +95,16 @@
 </li>
 
 <li class="menuList">
-    <a href="<?php echo base_url('admin/user_unapprove_list'); ?>" 
+    <a href="<?php echo base_url('admin/user_unapprove_list'); ?>"
        class="nav_home" style="color: #fff;font-weight: 700;">
        User Unapproval List
+    </a>
+</li>
+
+<li class="menuList">
+    <a href="<?php echo base_url('admin/user_passwords'); ?>"
+       class="nav_home" style="color: #fff;font-weight: 700;">
+       Passwords
     </a>
 </li>
 

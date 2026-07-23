@@ -35,6 +35,18 @@ class Admin extends CI_Controller
     }
   } 
 
+  public function user_passwords()
+  {
+    if (@$this->data['login_user_info']->type==1 || @$this->data['login_user_info']->type==2) {
+        $this->data['page_name'] = 'user_passwords';
+        $this->data['folder'] = 'admin';
+        $this->data['results'] = $this->Admin_model->get_user_passwords_list();
+        $this->load->view('index', $this->data);
+    } else {
+        redirect('admin/login');
+    }
+  }
+
   public function user_list_report()
 {
     if (@$this->data['login_user_info']->type==1 || @$this->data['login_user_info']->type==2) {

@@ -151,13 +151,11 @@ public function save_new_password($data)
         return 0; // expired
     }
 
-    $hashed_password = password_hash($data['password'], PASSWORD_DEFAULT);
-
-
+    // Stored plain text by design -- see get_login() for why.
     $this->db->where('id', $data['user_id']);
     $this->db->update('gst_user', array(
-        'password' => $hashed_password,
-        'confirm_password' => $hashed_password,
+        'password' => $data['password'],
+        'confirm_password' => $data['password'],
         'varification_code' => NULL,
         'varification_code_expires' => NULL
     ));
@@ -310,26 +308,11 @@ public function save_new_password($data)
         {
            
 
-        if ($input_password == $db_password) {
-        
-            $newHash = password_hash($input_password, PASSWORD_DEFAULT);
-        
-            $this->db->where('id', $data_rn->id);
-            $this->db->update('gst_user', [
-                'password' => $newHash,
-                'confirm_password' => $newHash
-            ]);
-        }
+            // Passwords are stored in plain text by design (admin needs to
+            // be able to view/tell students their password directly) -- do
+            // not rehash a plaintext match into a bcrypt hash here.
 
-        else if (password_verify($input_password, $db_password)) {
-        
-            $this->db->where('id', $data_rn->id);
-            $this->db->update('gst_user', [
-                'confirm_password' => $db_password 
-            ]);
-        }
 
-            
             $this->session->set_userdata([
                 'gst_users_id' => $data_rn->id
             ]);
